@@ -1,0 +1,11 @@
+.card-container {
+  width: fit-content;
+  text-align: center;
+}
+
+.card-container img {
+  width: 50%;
+}
+
+.card-container h4 {
+}

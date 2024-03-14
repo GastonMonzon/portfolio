@@ -1,0 +1,98 @@
+@font-face {
+  font-family: 'futura';
+  src: url('../src/assets/fonts/FUTURA55REGULAR.TTF');
+}
+@font-face {
+  font-family: 'futura-bold';
+  src: url('../src/assets/fonts/FUTURA45LIGHT.TTF');
+}
+
+:root {
+  box-sizing: border-box;
+  font-family: futura;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  scroll-behavior: smooth;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+section,
+footer {
+  padding: 40px;
+  padding-top: 6rem;
+  padding-bottom: 0;
+}
+
+
+h2 {
+  font-family: futura-bold;
+}
+
+button {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: bold;
+  width: 100px;
+  padding: 5px;
+  transition: 0.5s;
+}
+
+button:hover {
+  color: rgba(145, 47, 63, 0.7);
+}
+
+a {
+  text-decoration: none;
+  scroll-behavior: smooth;
+  color: inherit;
+}
+
+input,
+textarea {
+  background-color: rgb(49, 49, 49);
+  border: none;
+  border-radius: 0;
+  padding: 10px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+p {
+  white-space: pre-line;
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
