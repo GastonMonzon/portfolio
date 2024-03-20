@@ -1,10 +1,18 @@
 @font-face {
+  font-family: 'futura-light';
+  src: url('../src/assets/fonts/FUTURA45LIGHT.TTF');
+}
+@font-face {
   font-family: 'futura';
   src: url('../src/assets/fonts/FUTURA55REGULAR.TTF');
 }
 @font-face {
+  font-family: 'futura-medium';
+  src: url('../src/assets/fonts/FUTURA65MEDIUM.TTF');
+}
+@font-face {
   font-family: 'futura-bold';
-  src: url('../src/assets/fonts/FUTURA45LIGHT.TTF');
+  src: url('../src/assets/fonts/FUTURA75BOLD.TTF');
 }
 
 :root {
@@ -23,6 +31,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 *,
@@ -42,7 +51,7 @@ footer {
 
 
 h2 {
-  font-family: futura-bold;
+  font-family: futura-light;
 }
 
 button {

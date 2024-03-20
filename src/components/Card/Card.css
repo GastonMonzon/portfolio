@@ -1,11 +1,80 @@
 .card-container {
-  width: fit-content;
   text-align: center;
+  overflow: hidden;
+  border-radius: 5px;
 }
 
 .card-container img {
+  max-width: 70px;
   width: 50%;
 }
 
-.card-container h4 {
+.card-container p {
+  padding: 10px;
+}
+
+.card-container:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  animation: grow-width 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards,
+    grow-height 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.3s forwards;
+  z-index: 5;
+}
+
+.far-right-card {
+  text-align: center;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.far-right-card img {
+  max-width: 70px;
+  width: 50%;
+}
+
+.far-right-card p {
+  padding: 10px;
+}
+
+.far-right-card:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  animation: none;
+  animation:
+    move-left-and-grow-width 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards,
+    grow-height 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.3s forwards;
+  z-index: 5;
+}
+
+@keyframes move-left-and-grow-width {
+  0% {
+    width: 100%;
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%) scale(1.2);
+    width: 300px;
+  }
+}
+
+@keyframes grow-width {
+  0% {
+    width: 100%;
+    transform: scale(1);
+  }
+
+  100% {
+    width: 300px;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes grow-height {
+  0% {
+    height: 130px;
+  }
+
+  100% {
+    height: 300px;
+  }
+
 }

@@ -25,12 +25,16 @@ import sequelizeIcon from '../src/assets/icons/sequelize-icon.svg';
 import typescriptIcon from '../src/assets/icons/typescript-icon.svg';
 import viteIcon from '../src/assets/icons/vite-icon.svg';
 
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 import Card from './components/Card/Card';
 
 function App() {
   const [isEnglish, setIsEnglish] = useState(true);
+  const [containerWidth, setContainerWidth] = useState(0);
+  const [isSkillsViewed, setIsSkillsViewed] = useState(false);
+  const [numSkillColums, setNumSkillColumns] = useState(0);
   const [textContent, setTextContent] = useState({ homeButton: '', aboutButton: '', portfolioButton: '', skillsButton: '', contactButton: '', headLine: '', intro: '', skills: [], contactMessage: '', location: '', namePlaceholder: '', emailPlaceholder: '', subjectPlaceholder: '', messagePlaceholder: '', contactSendButton: '' });
   const [contactInfo, setContactInfo] = useState({ name: '', email: '', subject: '', message: '' });
   const [contactInfoErrors, setContactInfoErrors] = useState({ name: '', email: '', subject: '', message: '' });
@@ -95,7 +99,7 @@ function App() {
           },
           {
             name: 'Redux',
-            description: 'Redux is a predictable state management library which provides a centralized store to manage the state of a JavaScript application and facilitates predictable updates to that state through a unidirectional data flow.',
+            description: 'Redux is a state management library which provides a centralized store to manage the state of a JavaScript application and facilitates predictable updates.',
             icon: reduxIcon
           },
           {
@@ -140,7 +144,7 @@ function App() {
           // },
           {
             name: 'C++',
-            description: 'C++ is a general-purpose high-level programming language which provides low-level access to memory and hardware making it suitable for developing operating systems, embedded systems, and performance-critical applications.',
+            description: 'C++ is a general-purpose high-level programming language which provides low-level access to memory and hardware, suitable for developing operating systems, embedded systems, and performance-critical applications.',
             icon: cPlusPlusIcon
           },
           {
@@ -150,7 +154,7 @@ function App() {
           },
           {
             name: 'Python',
-            description: 'Python is a interpreted high-level programming language which emphasizes in simplicity and versatility, making it a popular choice for tasks ranging from web development and data analysis to artificial , machine-learning and automation.',
+            description: 'Python is a interpreted high-level programming language which emphasizes in simplicity and versatility, popular for tasks ranging from web development, data analysis to AI, machine-learning and automation.',
             icon: pythonIcon
           },
           // {
@@ -247,7 +251,139 @@ function App() {
     { id: 3, name: textContent.portfolioButton, href: '#portfolio', isScrolled: isScrollPortfolio },
     { id: 4, name: textContent.skillsButton, href: '#skills', isScrolled: isScrollSkills },
     { id: 5, name: textContent.contactButton, href: '#contact', isScrolled: isScrollContact },
-  ]
+  ];
+
+  const headlineInfoRef = useRef();
+  const headlineTitleRef = useRef();
+  const aboutTitleRef = useRef();
+  const aboutInfoRef = useRef();
+  const aboutImageRef = useRef();
+  const skillsGridRef = useRef();
+  // const headlineInfoRef = useRef();
+  // const headlineInfoRef = useRef();
+  // const headlineInfoRef = useRef();
+  const [headlineInViewRef, headlineInView] = useInView({
+    triggerOnce: false,
+    threshold: 0.2,
+  });
+  const [aboutInViewRef, aboutInView] = useInView({
+    triggerOnce: false,
+    threshold: 0,
+  });
+  const [portfolioInViewRef, portfolioInView] = useInView({
+    triggerOnce: false,
+    threshold: 0,
+  });
+  const [skillsInViewRef, skillsInView] = useInView({
+    triggerOnce: false,
+    threshold: 0,
+  });
+
+  const handleHeadlineAnimation = (headlineInView) => {
+    if (headlineInView) {
+      headlineTitleRef?.current?.classList.add('slide-headline-title-bottom');
+      headlineInfoRef?.current?.classList?.add('slide-headline-info-left');
+      headlineInfoRef?.current?.classList?.remove('slide-headline-info-right');
+      headlineTitleRef?.current?.classList.remove('slide-headline-title-top');
+    } else {
+      headlineTitleRef?.current?.classList.add('slide-headline-title-top');
+      headlineInfoRef?.current?.classList?.add('slide-headline-info-right');
+      headlineTitleRef?.current?.classList.remove('slide-headline-title-bottom');
+      headlineInfoRef?.current?.classList?.remove('slide-headline-info-left');
+    }
+  }
+
+  const handleAboutAnimation = (aboutInView) => {
+    if (aboutInView) {
+      aboutImageRef?.current?.classList?.add('slide-about-image-right');
+      aboutTitleRef?.current?.classList?.add('slide-about-title-right');
+      aboutInfoRef?.current?.classList?.add('slide-about-info-right');
+      aboutImageRef?.current?.classList?.remove('slide-about-image-left');
+      aboutTitleRef?.current?.classList?.remove('slide-about-title-left');
+      aboutInfoRef?.current?.classList?.remove('slide-about-info-left');
+    } else {
+      aboutInfoRef?.current?.classList?.add('slide-about-info-left');
+      aboutImageRef?.current?.classList?.add('slide-about-image-left');
+      aboutTitleRef?.current?.classList?.add('slide-about-title-left');
+      aboutInfoRef?.current?.classList?.remove('slide-about-info-right');
+      aboutImageRef?.current?.classList?.remove('slide-about-image-right');
+      aboutTitleRef?.current?.classList?.remove('slide-about-title-right');
+    }
+  }
+  const handlePortfolioAnimation = () => {
+
+  }
+
+  const handleSkillsAnimation = () => {
+    if (skillsInView && !isSkillsViewed) {
+      let i = 1, delay = 0;
+      textContent.skills.forEach((skill, index) => {
+        const element = document.getElementById(skill.name);
+        element.style.pointerEvents = 'none';
+        const animation = element?.animate(
+          [
+            { transform: 'translateX(-120vw)' },
+            { transform: 'translateX(0)' },
+          ],
+          {
+            duration: 800,
+            easing: 'cubic-bezier(0.190, 1.000, 0.220, 1.000)',
+            fill: 'forwards',
+            delay: (((numSkillColums / i) * 80) + delay)
+          }
+        );
+        animation.onfinish = () => {
+          element.style.pointerEvents = 'auto';
+          setIsSkillsViewed(true);
+        };
+        i++;
+        if (i == numSkillColums + 1) {
+          i = 1;
+          delay = (numSkillColums / i) * 80 * (index / numSkillColums) + 80;
+        }
+      });
+    } else if (!skillsInView && !isSkillsViewed) {
+      textContent.skills.forEach((skill) => {
+        const element = document.getElementById(skill.name);
+        element?.animate(
+          [
+            { transform: 'translateX(0)' },
+            { transform: 'translateX(120vw)' },
+          ],
+          {
+            duration: 0,
+            fill: 'forwards',
+          }
+        );
+      });
+    }
+  }
+
+  useEffect(() => {
+    const handleResize = () => {
+      const newContainerWidth = skillsGridRef?.current?.offsetWidth;
+      setContainerWidth(newContainerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    const computedStyles = getComputedStyle(skillsGridRef.current);
+    const gridTemplateColumns = computedStyles.gridTemplateColumns;
+    const numColumns = gridTemplateColumns?.split(' ')?.length;
+    setNumSkillColumns(numColumns);
+  }, [containerWidth])
+
+  const setSkillClassName = (i) => {
+    console.log(i + 1, numSkillColums, (i + 1) % numSkillColums);
+    return ((i + 1) % numSkillColums == 0 && i !== 0);
+  }
 
   return (
     <>
@@ -275,32 +411,44 @@ function App() {
           <button className='language-button' disabled={!isEnglish} onClick={() => setIsEnglish(false)}>ES</button> */}
         </div>
       </nav>
-      <section id='headline' >
-        <h2>{textContent.headLine}</h2>
-        <p>{textContent.intro}</p>
-      </section>
-      <section id='about' >
-        <div className='image-div' >
-          <img src='' alt='My Picture' />
-        </div>
-        <div className='about-me-info' >
-          <h2>{textContent.aboutButton}</h2>
-          <p>{textContent.about}</p>
-        </div>
-      </section>
-      <section id='portfolio' >
-        <h2>{textContent.portfolioButton}</h2>
-      </section>
-      <section id='skills' >
-        <h2>{textContent.skillsButton}</h2>
-        <div className='skills-container' >
-          {textContent.skills.map(skill => {
-            return (
-              <Card key={skill.name} skill={skill} />
-            );
-          })}
-        </div>
-      </section>
+      <div ref={headlineInViewRef} >
+        <section id='headline'>
+          <h2 ref={headlineTitleRef} >{textContent.headLine}</h2>
+          <p ref={headlineInfoRef} >{textContent.intro}</p>
+        </section>
+        {handleHeadlineAnimation(headlineInView)}
+      </div>
+      <div ref={aboutInViewRef} >
+        <section id='about' >
+          <div className='image-div' ref={aboutImageRef} >
+            <img src='' alt='My Picture' />
+          </div>
+          <div className='about-me-info' >
+            <h2 ref={aboutTitleRef} >{textContent.aboutButton}</h2>
+            <p ref={aboutInfoRef} >{textContent.about}</p>
+          </div>
+        </section>
+        {handleAboutAnimation(aboutInView)}
+      </div>
+      <div ref={portfolioInViewRef} >
+        <section id='portfolio' >
+          <h2>{textContent.portfolioButton}</h2>
+        </section>
+        {handlePortfolioAnimation(portfolioInView)}
+      </div>
+      <div className='skills-in-view-container' id='skillsContainer' ref={skillsInViewRef} >
+        <section id='skills' >
+          <h2>{textContent.skillsButton}</h2>
+          <div className='skills-container' ref={skillsGridRef} >
+            {textContent.skills.map((skill, index) => {
+              return (
+                <Card key={skill.name} skill={skill} skillClassName={setSkillClassName(index)} />
+              );
+            })}
+          </div>
+        </section>
+        {handleSkillsAnimation(skillsInView)}
+      </div>
       <section id='contact' >
         <h2>{textContent.contactButton}</h2>
         <p>{textContent.contactMessage}</p>
