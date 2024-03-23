@@ -1,0 +1,22 @@
+.contact-container {
+  display: grid;
+  grid-template-columns: 20vw 60vw;
+  gap: 10vw;
+  padding-top: 20px;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+.name-email-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name-email-container input {
+  width: 48%;
+}

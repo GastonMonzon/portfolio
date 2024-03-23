@@ -2,6 +2,7 @@
   text-align: center;
   overflow: hidden;
   border-radius: 5px;
+  transform: translateX(120vw);
 }
 
 .card-container img {
@@ -24,6 +25,7 @@
   text-align: center;
   overflow: hidden;
   border-radius: 5px;
+  transform: translateX(120vw);
 }
 
 .far-right-card img {
@@ -37,11 +39,15 @@
 
 .far-right-card:hover {
   background-color: rgba(0, 0, 0, 0.8);
-  animation: none;
   animation:
     move-left-and-grow-width 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards,
     grow-height 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.3s forwards;
   z-index: 5;
+}
+
+.reset-move-animation {
+  animation: none;
+  transform: translateX(120vw);
 }
 
 @keyframes move-left-and-grow-width {
@@ -51,8 +57,8 @@
   }
 
   100% {
-    transform: translateX(-50%) scale(1.2);
     width: 300px;
+    transform: translateX(-50%) scale(1.2);
   }
 }
 
@@ -75,6 +81,17 @@
 
   100% {
     height: 300px;
+  }
+
+}
+
+@keyframes reset-move-animation {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-120vw);
   }
 
 }
