@@ -52,8 +52,15 @@ export default function changeLanguage(isEnglish) {
       forzaAppType: 'Desktop Only',
       frozaDescription: `Desktop application designed specifically for modded versions of the popular game Forza Motorsport 4 on the Xbox 360 console. Features include a full rundown of all in-game vehicle specifications including dlcs, custom searches, filters and sorting methods and the ability to engine swap any car engine to any other car. Works by upon confirmation editing the correct game database and on submit run various scripts to package the data in xbox readable format for transfering.`,
       rickAndMortyTitle: 'Rick And Morty',
-      rickAndMortyAppType: 'Responsive | Desktop | Tablet | Mobile',
-      rickAndMortyDescription: '',
+      rickAndMortyAppType: 'Web App Responsive | Desktop | Tablet | Mobile',
+      rickAndMortyDescription: `Feature-packed web app with a multitude of functionalities:
+       Secure data storage for sensitive information and authentication for register and loging in using various platforms. 
+       Seamless combination of advanced searching, filtering and sorting. 
+      Dozens of customizeable card viewing options for both home and favorites for amount of cards per page, shape, info positioning, text alignment and more.
+      Detail information for each character.
+      Extensive background selection for each page.
+      Load and save functionality with manual and autosave options for each aformentioned feature. 
+      Personal info and email and password editing.`,
       countriesTitle: 'Countries Comming Soon',
       countriesAppType: 'Responsive | Desktop | Tablet | Mobile',
       countriesDescription: 'A full stack application that allows users to search for countries and view their information.',

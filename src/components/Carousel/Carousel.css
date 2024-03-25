@@ -3,7 +3,7 @@
   /* height: 80%; */
   position: relative;
   display: flex;
-  margin: 2% auto 0 auto;
+  margin: 0 auto;
 }
 
 .hero-images-container {
@@ -23,31 +23,40 @@
 }
 
 .hero-image-button {
-  box-sizing: border-box;
   position: absolute;
-  height: fit-content;
-  top: 47%;
-  padding: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 60px;
+  height: 60px;
+  top: 45%;
+  padding: 10px 0;
   border: none;
   border-radius: 10px;
   background: transparent;
+  /* overflow: hidden; */
   cursor: pointer;
+}
+
+.hero-image-button img {
+  width: 100%;
+  height: 100%;
 }
 
 .hero-image-button:hover {
-  background-color: rgba(164, 164, 164, 0.7);
-
+  background-color: rgba(167, 167, 167, 0.6);
 }
 
-.hero-image-dot-button {
-  all: unset;
+.hero-image-radio-button {
+  align-items: center;
+  background-color: white;
+  accent-color: rgb(67, 0, 98);
+  height: 15px;
+  transition: all 0.2s ease-in-out;
+}
+
+.hero-image-radio-button:hover,
+.hero-image-radio-button:checked {
+  outline: none;
+  transform: scale(1.25);
   cursor: pointer;
-  width: 1rem;
-  height: 1rem;
-  transition: scale 100ms ease-in-out;
-}
-
-.hero-image-dot-button:hover,
-.hero-image-dot-button:focus-visible {
-  scale: 1.2;
 }

@@ -23,7 +23,6 @@
   letter-spacing: 1px;
   scroll-behavior: smooth;
 
-  color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
@@ -55,6 +54,7 @@ h2 {
 }
 
 button {
+  color: rgba(255, 255, 255, 0.87);
   background: transparent;
   border: none;
   border-bottom: 2px solid transparent;
@@ -79,7 +79,7 @@ a {
 
 input,
 textarea {
-  background-color: rgb(49, 49, 49);
+  /* background-color: rgb(49, 49, 49); */
   border: none;
   border-radius: 0;
   padding: 10px;

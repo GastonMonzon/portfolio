@@ -17,6 +17,10 @@
   justify-self: end;
 }
 
+#nav button {
+  transition: 500ms ease-in-out;
+}
+
 .button-scrolled {
   color: rgb(145, 47, 63);
   border-color: rgb(145, 47, 63);

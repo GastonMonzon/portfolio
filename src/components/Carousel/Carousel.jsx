@@ -1,5 +1,9 @@
 
 import './Carousel.css';
+
+import nextIcon from './Carrousel icons/next.svg';
+import perviousIcon from './Carrousel icons/previous.svg';
+
 import { useEffect, useRef, useState } from 'react'
 export default function Carousel({ images }) {
 
@@ -63,14 +67,14 @@ export default function Carousel({ images }) {
         className="hero-image-button"
         onClick={showPrevImage}
         style={{ left: 0 }} >
-        ⬅️
+          <img src={perviousIcon} alt='previousIcon' />
       </button>
       </div>
       <button
         onClick={showNextImage}
         className="hero-image-button"
         style={{ right: 0 }} >
-        ➡️
+          <img src={nextIcon} alt='nextIcon' />
       </button>
       <div
         style={{
@@ -82,12 +86,12 @@ export default function Carousel({ images }) {
           gap: ".25rem",
         }} >
         {images.map((_, index) => (
-          <button
+          <input
+          type='radio'
             key={index}
-            className='hero-image-dot-button'
-            onClick={() => setImageIndex(index)} >
-            {index === imageIndex ? '⚪' : '🔘'}
-          </button>
+            className='hero-image-radio-button'
+            onClick={() => setImageIndex(index)} 
+            checked={index === imageIndex} />
         ))}
       </div>
     </div>
