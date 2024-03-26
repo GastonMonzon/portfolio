@@ -2,6 +2,8 @@ import './About.css';
 
 import { useInView } from 'react-intersection-observer';
 import { useRef } from 'react'
+
+import profilePicture from '../../assets/images/profile-picture.jpg';
 import handleAnimation from '../../animationUtils';
 
 export default function About({ textContent }) {
@@ -18,7 +20,7 @@ export default function About({ textContent }) {
       <div ref={aboutInViewRef} >
         <section id='about' >
           <div className='image-div' ref={aboutImageRef} >
-            <img src='' alt='My Picture' />
+            <img src={profilePicture} alt='My Picture' />
           </div>
           <div className='about-me-info' >
             <h2 ref={aboutTitleRef} >{textContent.aboutButton}</h2>
