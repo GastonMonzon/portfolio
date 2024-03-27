@@ -1,4 +1,5 @@
 import cPlusPlusIcon from '../src/assets/icons/c++-icon.svg';
+import cloudinaryIcon from '../src/assets/icons/cloudinary-icon.svg';
 import css3Icon from '../src/assets/icons/css3-icon.svg';
 import databaseIcon from '../src/assets/icons/database-icon.svg';
 import expressIcon from '../src/assets/icons/express-icon.svg';
@@ -21,6 +22,7 @@ import react from '../src/assets/icons/react.svg';
 import reduxIcon from '../src/assets/icons/redux-icon.svg';
 import sequelizeIcon from '../src/assets/icons/sequelize-icon.svg';
 import typescriptIcon from '../src/assets/icons/typescript-icon.svg';
+import vercelIcon from '../src/assets/icons/vercel-icon.svg';
 import viteIcon from '../src/assets/icons/vite-icon.svg';
 
 export default function changeLanguage(isEnglish) {
@@ -67,7 +69,8 @@ export default function changeLanguage(isEnglish) {
       clothingStoreTitle: 'Clothing Store Comming Soon',
       clothingStoreAppType: '',
       clothingStoreDescription: '',
-      deployButton: 'Check Out',
+      gitHubButton: 'Check Code',
+      deployButton: 'Deploy App',
       skills: [
         {
           name: 'HTML5',
@@ -100,11 +103,6 @@ export default function changeLanguage(isEnglish) {
           icon: react
         },
         {
-          name: 'Redux',
-          description: 'Redux is a state management library which provides a centralized store to manage the state of a JavaScript application and facilitates predictable updates.',
-          icon: reduxIcon
-        },
-        {
           name: 'SQL',
           description: `SQL (Structured Query Language) is a programming language used for managing and manipulating relational databases.`,
           icon: databaseIcon
@@ -116,7 +114,7 @@ export default function changeLanguage(isEnglish) {
         },
         {
           name: 'Firebase',
-          description: `Firebase is a service that simplifies the process of user authentication in web and mobile applications in a secure and reliable way offering integration with external identity providers.`,
+          description: `Firebase is a service that simplifies user authentication in web and mobile apps in a secure and reliable way offering integration with external identity providers.`,
           icon: firebaseIcon
         },
         {
@@ -130,6 +128,11 @@ export default function changeLanguage(isEnglish) {
           icon: railwayIcon
         },
         {
+          name: 'Vercel',
+          description: 'Vercel is a cloud-based platform that simplifies deployment and hosting of web applications.',
+          icon: vercelIcon
+        },
+        {
           name: 'PostgreSQL',
           description: 'PostgreSQL is an open-source object-oriented relational database management system known for robust data integrity, reliability, scalability and advanced features.',
           icon: postgresqlIcon
@@ -139,11 +142,16 @@ export default function changeLanguage(isEnglish) {
           description: 'MySQL is an open-source relational database management system that offers a simpler and more user-friendly approach, prioritizing ease of use and availability',
           icon: mysqlIcon
         },
-        // {
-        //   name: 'MongoDB',
-        //   description: `MongoDB is a popular NoSQL document database known for its scalability and flexibility in handling unstructured data, well-suited for rapidly evolving data requirements.`,
-        //   icon: mongoIcon
-        // },
+        {
+          name: 'MongoDB',
+          description: `MongoDB is a popular NoSQL document database known for its scalability and flexibility in handling unstructured data, well-suited for rapidly evolving data requirements.`,
+          icon: mongoIcon
+        },
+        {
+          name: 'Cloudinary',
+          description: 'Cloudinary is a cloud-based media management platform that provides a comprehensive solution for storing, optimizing, managing, and delivering images and videos on the web.',
+          icon: cloudinaryIcon
+        },
         {
           name: 'C++',
           description: 'C++ is a general-purpose high-level programming language which provides low-level access to memory and hardware, suitable for developing operating systems, embedded systems, and performance-critical applications.',

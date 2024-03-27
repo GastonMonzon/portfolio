@@ -22,7 +22,7 @@ function App() {
     rickAndMortyTitle: '', rickAndMortyAppType: '', rickAndMortyDescription: '', 
     countriesTitle: '', countriesAppType: '', countriesDescription: '',
     clothingStoreTitle: '', clothingStoreAppType: '', clothingStoreDescription: '', 
-    deployButton: '', 
+    gitHubButton: '', deployButton: '', 
     skills: [], 
     contactMessage: '', location: '', namePlaceholder: '', emailPlaceholder: '', subjectPlaceholder: '', messagePlaceholder: '', contactSendButton: '' });
 

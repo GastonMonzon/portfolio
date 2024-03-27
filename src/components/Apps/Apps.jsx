@@ -1,5 +1,33 @@
 import './Apps.css';
 
+import cPlusPlusIcon from '../../assets/icons/c++-icon.svg';
+import cloudinaryIcon from '../../assets/icons/cloudinary-icon.svg';
+import css3Icon from '../../assets/icons/css3-icon.svg';
+import databaseIcon from '../../assets/icons/database-icon.svg';
+import expressIcon from '../../assets/icons/express-icon.svg';
+import firebaseIcon from '../../assets/icons/firebase-icon.svg';
+import firestoreIcon from '../../assets/icons/firestore-icon.svg';
+import gitIcon from '../../assets/icons/git-icon.svg';
+import githubIcon from '../../assets/icons/github-icon.svg';
+import html5Icon from '../../assets/icons/html5-icon.svg';
+import javaIcon from '../../assets/icons/java-icon.svg';
+import javascriptIcon from '../../assets/icons/javascript-icon.svg';
+import mongoIcon from '../../assets/icons/mongo-icon.svg';
+import mongodbIcon from '../../assets/icons/mongodb-logo-icon.svg';
+import mysqlIcon from '../../assets/icons/mysql-icon.svg';
+import nodeIcon from '../../assets/icons/node-icon.svg';
+import postgresqlIcon from '../../assets/icons/postgresql-icon.svg';
+import pythonIcon from '../../assets/icons/python-icon.svg';
+import railwayIcon from '../../assets/icons/railway-icon.svg';
+import reactIcon from '../../assets/icons/react-icon.svg';
+import react from '../../assets/icons/react.svg';
+import reduxIcon from '../../assets/icons/redux-icon.svg';
+import sequelizeIcon from '../../assets/icons/sequelize-icon.svg';
+import typescriptIcon from '../../assets/icons/typescript-icon.svg';
+import vercelIcon from '../../assets/icons/vercel-icon.svg';
+import viteIcon from '../../assets/icons/vite-icon.svg';
+
+import rickAndMortyTitleIcon from '../../assets/icons/rick_and_morty_title.svg';
 import rickAndMortyImage1 from '../../assets/images/rickandmorty-image-1.jpg';
 import rickAndMortyImage2 from '../../assets/images/rickandmorty-image-2.jpg';
 import rickAndMortyImage3 from '../../assets/images/rickandmorty-image-3.jpg';
@@ -12,7 +40,7 @@ import rickAndMortyImage9 from '../../assets/images/rickandmorty-image-9.jpg';
 import rickAndMortyImage10 from '../../assets/images/rickandmorty-image-10.jpg';
 import rickAndMortyImage11 from '../../assets/images/rickandmorty-image-11.jpg';
 import rickAndMortyImage12 from '../../assets/images/rickandmorty-image-12.jpg';
-import rickAndMortyTitleIcon from '../../assets/icons/rick_and_morty_title.svg';
+import dogsTitleIcon from '../../assets/icons/dogs-icon.svg';
 import dogsImage1 from '../../assets/images/dogs-web-picture-1.jpg';
 import dogsImage2 from '../../assets/images/dogs-web-picture-2.jpg';
 import dogsImage3 from '../../assets/images/dogs-web-picture-3.jpg';
@@ -78,6 +106,20 @@ export default function Apps({ textContent }) {
       titleIcon: rickAndMortyTitleIcon,
       appType: textContent.rickAndMortyAppType,
       description: textContent.rickAndMortyDescription,
+      madeWith: [
+        reactIcon,
+        html5Icon,
+        css3Icon,
+        javascriptIcon,
+        nodeIcon,
+        postgresqlIcon,
+        gitIcon,
+        firebaseIcon,
+        firestoreIcon,
+        railwayIcon,
+        vercelIcon,
+      ],
+      gitHubUrl: 'https://github.com/GastonMonzon/rick_and_morty_full.git',
       images: [
         rickAndMortyImage1,
         rickAndMortyImage2,
@@ -102,8 +144,21 @@ export default function Apps({ textContent }) {
       infoRef: dogsInfoRef,
       imagesRef: dogsImagesRef,
       title: textContent.dogsTitle,
+      titleIcon: dogsTitleIcon,
       appType: textContent.dogsAppType,
       description: textContent.dogsDescription,
+      madeWith: [
+        reactIcon,
+        html5Icon,
+        css3Icon,
+        javascriptIcon,
+        nodeIcon,
+        postgresqlIcon,
+        gitIcon,
+        railwayIcon,
+        vercelIcon,
+      ],
+      gitHubUrl: 'https://github.com/GastonMonzon/Dogs-API-web-app.git',
       images: [
         dogsImage6,
         dogsImage1,
@@ -125,6 +180,18 @@ export default function Apps({ textContent }) {
       titleIcon: forzaTitleIcon,
       appType: textContent.forzaAppType,
       description: textContent.dogsDescription,
+      madeWith: [
+        reactIcon,
+        html5Icon,
+        css3Icon,
+        javascriptIcon,
+        nodeIcon,
+        mysqlIcon,
+        gitIcon,
+        railwayIcon,
+        vercelIcon,
+      ],
+      gitHubUrl: 'https://github.com/GastonMonzon/forza-motorsport-4-engine-setter.git',
       images: [
         forzaImage1,
         forzaImage2,
@@ -142,6 +209,17 @@ export default function Apps({ textContent }) {
       title: textContent.countriesTitle,
       appType: textContent.countriesAppType,
       description: textContent.countriesDescription,
+      madeWith: [
+        html5Icon,
+        css3Icon,
+        javascriptIcon,
+        reactIcon,
+        nodeIcon,
+        railwayIcon,
+        vercelIcon,
+        gitIcon,
+      ],
+      gitHubUrl: 'https://github.com/GastonMonzon/Dogs-API-web-app.git',
       images: [
         forzaImage1,
         forzaImage2,
@@ -166,9 +244,23 @@ export default function Apps({ textContent }) {
                 ) : <h3 ref={app.titleRef} >{app.title} <span ref={app.appTypeRef} >{app.appType}</span></h3>
               }
               <div className={`app-card-container ${app.index % 2 !== 0 ? 'reverse' : ''}`} >
-                <div className={`app-card-info-container ${app.index % 2 !== 0 ? 'align-left' : ''}`} ref={app.infoRef} >
+                <div className={`app-card-info-container`} ref={app.infoRef} >
                   <p>{app.description}</p>
-                  <button className='deploy-button' >{textContent.deployButton}</button>
+                  <h3>Made with:</h3>
+                  <div className='app-icons-container' >
+                    {app.madeWith.map((icon, index) => (
+                      <img className='made-with-icon' key={index} src={icon} alt={app.title} />
+                    ))}
+                  </div>
+                  <div className='app-buttons-container' >
+                    <a href={app.gitHubUrl} rel='noreferrer' target='_blank'>
+                    <button className='deploy-button' >
+                      {textContent.gitHubButton}
+                      <div></div>
+                      </button>
+                    </a>
+                      <button className='deploy-button' >{textContent.deployButton}</button>
+                  </div>
                 </div>
                 <div className='app-separator-div' ></div>
                 <div className='app-images-container' ref={app.imagesRef} >

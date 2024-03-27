@@ -16,7 +16,6 @@ export default function Carousel({ images }) {
       autoScrollIntervalRef.current = setInterval(() => {
         showNextImage();
       }, 4000);
-
       return () => {
         clearInterval(autoScrollIntervalRef.current);
       };
@@ -24,15 +23,16 @@ export default function Carousel({ images }) {
   });
 
   const stopAutoScroll = () => {
-    console.log('Stop');
     clearInterval(autoScrollIntervalRef.current);
   }
 
   const resumeAutoScroll = () => {
-    console.log('Resume');
     autoScrollIntervalRef.current = setInterval(() => {
       showNextImage();
     }, 4000);
+    return () => {
+      clearInterval(autoScrollIntervalRef.current);
+    };
   }
 
   const showNextImage = () => {
@@ -96,7 +96,7 @@ export default function Carousel({ images }) {
               type='radio'
               key={index}
               className={`hero-image-radio-button ${isFullscreen ? 'fullscreen-radio' : ''}`}
-              onClick={() => setImageIndex(index)}
+              onChange={() => setImageIndex(index)}
               checked={index === imageIndex} />
           ))}
         </div>

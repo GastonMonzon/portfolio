@@ -22,7 +22,17 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-end;
+  /* align-items: flex-end; */
+}
+
+.made-with-icon {
+  width: 50px;
+  padding: 5px;
+}
+
+.app-buttons-container {
+  display: flex;
+  justify-content: space-between;
 }
 
 .app-separator-div {
@@ -31,14 +41,43 @@
 
 .align-left {
   align-items: flex-start;
-
 }
 
 .deploy-button {
   font-size: 26px;
-  width: fit-content;
+  width: 10rem;
   padding: 10px;
-  background-color: rgb(0, 0, 0);
+  /* background-color: rgb(0, 0, 0); */
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 1%, rgb(255, 0, 0) 33%, rgb(8, 0, 255) 60%, rgba(0, 0, 0, 1) 100%);
+  background-size: 400% 1%;
+  animation: action 10s infinite linear forwards;
+  /* background-attachment: local; */
+}
+
+@keyframes action {
+  0% {
+    background-position: 0% 0%;
+    /* box-shadow: 5px 5px 20px rgb(93, 52, 168),-5px -5px 20px rgb(93, 52, 168); */
+  }
+  25% {
+    background-position: 100% 0%;
+
+  }
+
+  50% {
+    background-position: 200% 0%;
+    /* box-shadow: 5px 5px 20px rgb(81, 224, 210),-5px -5px 20px rgb(81, 224, 210); */
+  }
+
+  75% {
+    background-position: 300% 0%;
+    /* box-shadow: 5px 5px 20px rgb(81, 224, 210),-5px -5px 20px rgb(81, 224, 210); */
+  }
+
+  100% {
+    background-position: 400% 0%;
+    /* box-shadow: 5px 5px 20px rgb(93, 52, 168),-5px -5px 20px rgb(93, 52, 168); */
+  }
 }
 
 .deploy-button:hover {
