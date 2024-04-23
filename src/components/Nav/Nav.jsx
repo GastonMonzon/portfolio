@@ -1,7 +1,7 @@
 import './Nav.css';
 import { useEffect, useState } from 'react';
 
-export default function Nav({ textContent }) {
+export default function Nav({ textContent, isEnglish, handleLanguageChange }) {
   const [isScrollHome, setIsScrollHome] = useState(false);
   const [isScrollAbout, setIsScrollAbout] = useState(false);
   const [isScrollPortfolio, setIsScrollPortfolio] = useState(false);
@@ -10,8 +10,8 @@ export default function Nav({ textContent }) {
   const navButtons = [
     { id: 1, name: textContent.homeButton, href: '#headline', isScrolled: isScrollHome },
     { id: 2, name: textContent.aboutButton, href: '#about', isScrolled: isScrollAbout },
-    { id: 3, name: textContent.portfolioButton, href: '#portfolio', isScrolled: isScrollPortfolio },
     { id: 4, name: textContent.skillsButton, href: '#skills', isScrolled: isScrollSkills },
+    { id: 3, name: textContent.portfolioButton, href: '#portfolio', isScrolled: isScrollPortfolio },
     { id: 5, name: textContent.contactButton, href: '#contact', isScrolled: isScrollContact },
   ];
 
@@ -91,6 +91,9 @@ export default function Nav({ textContent }) {
           </button>
         )
       })}
+      <button onClick={handleLanguageChange} >
+        {isEnglish ? 'Español' : 'English'}
+      </button>
     </div>
   </nav>
   )
