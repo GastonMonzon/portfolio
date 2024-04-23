@@ -23,10 +23,20 @@ import reactIcon from '../../assets/icons/react-icon.svg';
 import react from '../../assets/icons/react.svg';
 import reduxIcon from '../../assets/icons/redux-icon.svg';
 import sequelizeIcon from '../../assets/icons/sequelize-icon.svg';
+import stripeIcon from '../../assets/icons/stripe-icon2.svg';
 import typescriptIcon from '../../assets/icons/typescript-icon.svg';
 import vercelIcon from '../../assets/icons/vercel-icon.svg';
 import viteIcon from '../../assets/icons/vite-icon.svg';
 
+// import ecommerceTitleIcon from '../../assets/icons/ecommerce-logo-cropped.webp';
+import ecommerceTitleIcon from '../../assets/icons/ecommerce-name-icon.png';
+import ecommerceImage1 from '../../assets/images/e-commerce-web-picture-1.png';
+import ecommerceImage2 from '../../assets/images/e-commerce-web-picture-2.png';
+import ecommerceImage3 from '../../assets/images/e-commerce-web-picture-3.png';
+import ecommerceImage4 from '../../assets/images/e-commerce-web-picture-4.png';
+import ecommerceImage5 from '../../assets/images/e-commerce-web-picture-5.png';
+import ecommerceImage6 from '../../assets/images/e-commerce-web-picture-6.png';
+import ecommerceImage7 from '../../assets/images/e-commerce-web-picture-7.png';
 import rickAndMortyTitleIcon from '../../assets/icons/rick_and_morty_title.svg';
 import rickAndMortyImage1 from '../../assets/images/rickandmorty-image-1.jpg';
 import rickAndMortyImage2 from '../../assets/images/rickandmorty-image-2.jpg';
@@ -59,6 +69,10 @@ import { useInView } from 'react-intersection-observer';
 import { useRef } from 'react';
 
 export default function Apps({ textContent }) {
+  const ecommerceTitleRef = useRef();
+  const ecommerceInfoRef = useRef();
+  const ecommerceAppTypeRef = useRef();
+  const ecommerceImagesRef = useRef();
   const rickAndMortyTitleRef = useRef();
   const rickAndMortyInfoRef = useRef();
   const rickAndMortyAppTypeRef = useRef();
@@ -76,6 +90,10 @@ export default function Apps({ textContent }) {
   const countriesAppTypeRef = useRef();
   const countriesImagesRef = useRef();
 
+  const [ecommerceInViewRef, ecommerceInView] = useInView({
+    triggerOnce: false,
+    threshold: 0,
+  });
   const [rickAndMortyInViewRef, rickAndMortyInView] = useInView({
     triggerOnce: false,
     threshold: 0,
@@ -94,8 +112,46 @@ export default function Apps({ textContent }) {
   });
 
   const apps = {
-    rickAndMorty: {
+    ecommerce: {
       index: 0,
+      viewRef: ecommerceInViewRef,
+      titleRef: ecommerceTitleRef,
+      appTypeRef: ecommerceAppTypeRef,
+      infoRef: ecommerceInfoRef,
+      imagesRef: ecommerceImagesRef,
+      viewValue: ecommerceInView,
+      title: textContent.clothingStoreTitle,
+      titleIcon: ecommerceTitleIcon,
+      appType: textContent.clothingStoreAppType,
+      description: textContent.clothingStoreDescription,
+      madeWith: [
+        reactIcon,
+        html5Icon,
+        css3Icon,
+        javascriptIcon,
+        nodeIcon,
+        mongoIcon,
+        firebaseIcon,
+        stripeIcon,
+        cloudinaryIcon,
+        gitIcon,
+        railwayIcon,
+        vercelIcon,
+      ],
+      gitHubUrl: 'https://github.com/GastonMonzon/ecommerce-ropa',
+      deployUrl: 'https://ecommerce-ropa-six.vercel.app/',
+      images: [
+        ecommerceImage1,
+        ecommerceImage2,
+        ecommerceImage3,
+        ecommerceImage4,
+        ecommerceImage5,
+        ecommerceImage6,
+        ecommerceImage7,
+      ]
+    },
+    rickAndMorty: {
+      index: 1,
       viewRef: rickAndMortyInViewRef,
       titleRef: rickAndMortyTitleRef,
       appTypeRef: rickAndMortyAppTypeRef,
@@ -120,6 +176,7 @@ export default function Apps({ textContent }) {
         vercelIcon,
       ],
       gitHubUrl: 'https://github.com/GastonMonzon/rick_and_morty_full.git',
+      deployUrl: 'https://forza-motorsport-4-engine-setter-client.vercel.app/',
       images: [
         rickAndMortyImage1,
         rickAndMortyImage2,
@@ -136,7 +193,7 @@ export default function Apps({ textContent }) {
       ]
     },
     dogs: {
-      index: 1,
+      index: 2,
       viewRef: dogsInViewRef,
       viewValue: dogsInView,
       titleRef: dogsTitleRef,
@@ -159,6 +216,7 @@ export default function Apps({ textContent }) {
         vercelIcon,
       ],
       gitHubUrl: 'https://github.com/GastonMonzon/Dogs-API-web-app.git',
+      deployUrl: 'https://dogs-api-web-app.vercel.app/',
       images: [
         dogsImage6,
         dogsImage1,
@@ -169,7 +227,7 @@ export default function Apps({ textContent }) {
       ]
     },
     forza: {
-      index: 2,
+      index: 3,
       viewRef: forzaInViewRef,
       viewValue: forzaInView,
       titleRef: forzaTitleRef,
@@ -179,7 +237,7 @@ export default function Apps({ textContent }) {
       title: textContent.forzaTitle,
       titleIcon: forzaTitleIcon,
       appType: textContent.forzaAppType,
-      description: textContent.dogsDescription,
+      description: textContent.forzaDescription,
       madeWith: [
         reactIcon,
         html5Icon,
@@ -192,6 +250,7 @@ export default function Apps({ textContent }) {
         vercelIcon,
       ],
       gitHubUrl: 'https://github.com/GastonMonzon/forza-motorsport-4-engine-setter.git',
+      deployUrl: 'https://forza-motorsport-4-engine-setter-client.vercel.app/',
       images: [
         forzaImage1,
         forzaImage2,
@@ -199,7 +258,7 @@ export default function Apps({ textContent }) {
       ]
     },
     countries: {
-      index: 3,
+      index: 4,
       viewRef: countriesInViewRef,
       viewValue: countriesInView,
       titleRef: countriesTitleRef,
@@ -220,10 +279,8 @@ export default function Apps({ textContent }) {
         gitIcon,
       ],
       gitHubUrl: 'https://github.com/GastonMonzon/Dogs-API-web-app.git',
+      deployUrl: '',
       images: [
-        forzaImage1,
-        forzaImage2,
-        forzaImage3,
       ]
     },
   };
@@ -246,21 +303,36 @@ export default function Apps({ textContent }) {
               <div className={`app-card-container ${app.index % 2 !== 0 ? 'reverse' : ''}`} >
                 <div className={`app-card-info-container`} ref={app.infoRef} >
                   <p>{app.description}</p>
-                  <h3>Made with:</h3>
-                  <div className='app-icons-container' >
-                    {app.madeWith.map((icon, index) => (
-                      <img className='made-with-icon' key={index} src={icon} alt={app.title} />
-                    ))}
-                  </div>
-                  <div className='app-buttons-container' >
-                    <a href={app.gitHubUrl} rel='noreferrer' target='_blank'>
-                    <button className='deploy-button' >
-                      {textContent.gitHubButton}
-                      <div></div>
-                      </button>
-                    </a>
-                      <button className='deploy-button' >{textContent.deployButton}</button>
-                  </div>
+                  <h3>{textContent.madeWith}</h3>
+                  <a href='#skills'>
+                    <div className='app-icons-container' >
+                      {app.madeWith.map((icon, index) => (
+                        <img className='made-with-icon' key={index} src={icon} alt={app.title} />
+                      ))}
+                    </div>
+                  </a>
+                  {app.deployUrl &&
+                    <div className='app-buttons-container' >
+                      <div className='button-background-container' >
+                        <a href={app.gitHubUrl} rel='noreferrer' target='_blank'>
+                          <button className='deploy-button' >
+                            {textContent.gitHubButton}
+                          </button>
+                        </a>
+                        <div className='button-background' >
+                        </div>
+                      </div>
+                      <div className='button-background-container' >
+                        <a href={app.deployUrl} rel='noreferrer' target='_blank'>
+                          <button className='deploy-button' >
+                            {textContent.deployButton}
+                          </button>
+                        </a>
+                        <div className='button-background' >
+                        </div>
+                      </div>
+                    </div>
+                  }
                 </div>
                 <div className='app-separator-div' ></div>
                 <div className='app-images-container' ref={app.imagesRef} >
