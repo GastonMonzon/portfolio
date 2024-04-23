@@ -30,15 +30,19 @@ function App() {
     setTextContent(changeLanguage(isEnglish));
   }, [isEnglish]);
 
+  const handleLanguageChange = () => {
+    setIsEnglish(!isEnglish);
+  }
+
 
   return (
     <>
       <BackGroundAnimation />
-      <Nav textContent={textContent} />
+      <Nav textContent={textContent} isEnglish={isEnglish} handleLanguageChange={handleLanguageChange} />
       <Headline textContent={textContent} />
       <About textContent={textContent} />
-      <Apps textContent={textContent} />
       <Skills textContent={textContent} />
+      <Apps textContent={textContent} />
       <Contact textContent={textContent} />
       <Footer textContent={textContent} />
     </>

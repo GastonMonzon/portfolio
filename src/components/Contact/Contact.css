@@ -2,7 +2,8 @@
   display: grid;
   grid-template-columns: 20vw 60vw;
   gap: 10vw;
-  padding-top: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 form {
@@ -10,6 +11,8 @@ form {
   grid-template-columns: 1fr;
   align-items: center;
   gap: 20px;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 .name-email-container {
@@ -19,4 +22,13 @@ form {
 
 .name-email-container input {
   width: 48%;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.contact-container textarea,
+.contact-container input { 
+  resize: none;
+  font-family: inherit;
+  font-size: inherit;
 }

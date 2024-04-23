@@ -1,6 +1,7 @@
 #nav {
   position: fixed;
   background-color: black;
+  border-bottom: 1px solid red;
   width: 100%;
   display: grid;
   grid-template-columns: auto 1fr;
