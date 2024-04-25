@@ -23,14 +23,14 @@ export default function Footer() {
           <img src={githubIcon} alt='Github link' />
         </button>
       </a>
-      <a className='cv-link-contianer' href='https://github.com/GastonMonzon' rel='noreferrer' target='_blank' >
+      {/* <a className='cv-link-contianer' href='https://github.com/GastonMonzon' rel='noreferrer' target='_blank' >
         <button className='cv-link-button' >
           CV
         </button>
         <button className='cv-link-icon' >
           <img src={cvIcon3} alt='Github link' />
         </button>
-      </a>
+      </a> */}
     </footer>
   )
 }
