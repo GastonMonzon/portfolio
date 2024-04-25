@@ -67,18 +67,18 @@ export default function Contact({ textContent }) {
         },
       });
       console.log(VITE_EMAIL_SERVICE_ID, VITE_EMAIL_TEMPLATE_ID, VITE_EMAIL_PUBLIC_ID);
-      // await emailjs.send(
-      //   VITE_EMAIL_SERVICE_ID,
-      //   VITE_EMAIL_TEMPLATE_ID,
-      //   {
-      //     name,
-      //     email,
-      //     subject,
-      //     message,
-      //   },
-      //   VITE_EMAIL_PUBLIC_ID,
-      //   VITE_EMAIL_PRIVATE_ID,
-      // );
+      await emailjs.send(
+        VITE_EMAIL_SERVICE_ID,
+        VITE_EMAIL_TEMPLATE_ID,
+        {
+          name,
+          email,
+          subject,
+          message,
+        },
+        VITE_EMAIL_PUBLIC_ID,
+        VITE_EMAIL_PRIVATE_ID,
+      );
       setContactInfo({ name: '', email: '', subject: '', message: '' });
       setContactInfoErrorToggle({ name: true, email: true, subject: false, message: true });
       setWordCounts({ name: 0, email: 0, subject: 0, message: 0 });
