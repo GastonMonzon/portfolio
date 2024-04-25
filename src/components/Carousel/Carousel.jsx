@@ -10,30 +10,38 @@ export default function Carousel({ images }) {
   const [imageIndex, setImageIndex] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
   let autoScrollIntervalRef = useRef(null);
+  const isAutoScrollActiveRef = useRef(false);
 
   useEffect(() => {
-    if (!isFullscreen) {
+    if (!isFullscreen && !isAutoScrollActiveRef.current) {
       autoScrollIntervalRef.current = setInterval(() => {
         showNextImage();
       }, 4000);
+      isAutoScrollActiveRef.current = true;
       return () => {
         clearInterval(autoScrollIntervalRef.current);
+        isAutoScrollActiveRef.current = false;
       };
     }
-  });
+  }, [isFullscreen]);
 
   const stopAutoScroll = () => {
     clearInterval(autoScrollIntervalRef.current);
-  }
+    isAutoScrollActiveRef.current = false;
+  };
 
   const resumeAutoScroll = () => {
-    autoScrollIntervalRef.current = setInterval(() => {
-      showNextImage();
-    }, 4000);
-    return () => {
-      clearInterval(autoScrollIntervalRef.current);
-    };
-  }
+    if (!isAutoScrollActiveRef.current) {
+      autoScrollIntervalRef.current = setInterval(() => {
+        showNextImage();
+      }, 4000);
+      isAutoScrollActiveRef.current = true;
+      return () => {
+        clearInterval(autoScrollIntervalRef.current);
+        isAutoScrollActiveRef.current = false;
+      };
+    }
+  };
 
   const showNextImage = () => {
     setImageIndex(index => {
@@ -71,10 +79,10 @@ export default function Carousel({ images }) {
               src={image}
               alt={`Image ${index + 1}`}
               className='hero-image'
-              style={{ cursor: 'pointer', translate: `${-100 * imageIndex}%` }}
+              style={{ cursor: isFullscreen ? 'default' : 'pointer', translate: `${-100 * imageIndex}%` }}
               onClick={handleHeroImageClick}
               onMouseEnter={stopAutoScroll}
-              onMouseLeave={resumeAutoScroll}
+              onMouseLeave={isFullscreen ? null : resumeAutoScroll}
             />
           ))}
           <button
