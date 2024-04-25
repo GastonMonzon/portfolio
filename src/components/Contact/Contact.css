@@ -27,8 +27,162 @@ form {
 }
 
 .contact-container textarea,
-.contact-container input { 
+.contact-container input {
   resize: none;
   font-family: inherit;
   font-size: inherit;
+  transition: 0.2s ease-out;
+}
+
+.contact-container textarea:not(:focus),
+.contact-container input:not(:focus) {
+  outline: none;
+}
+
+.contact-container textarea:focus,
+.contact-container input:focus {
+  outline: 2px solid white;
+}
+
+.contact-container button:hover {
+  text-shadow: 1px 1px 1px black;
+}
+
+.send-errors-container {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.send-errors-container p {
+  padding-right: 10px;
+}
+
+.incorrect {
+  font-weight: bold;
+  color: rgb(255, 0, 0);
+}
+
+.correct {
+  color: rgb(0, 255, 0);
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+label {
+  width: fit-content;
+}
+
+.form-submit-button {
+  width: fit-content;
+  padding: 10px 0 10px 20px;
+  align-self: flex-end;
+}
+
+.wordcount-send-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.deploy-button:hover:disabled {
+  color: inherit;
+  background-color: inherit;
+  transform: none;
+  cursor: default;
+}
+
+.disabled-container {
+  animation: none;
+  opacity: 0.7;
+  transform: scale(0.8) translateX(20px);
+}
+
+.disabled {
+  animation: none;
+}
+
+#modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--review-modal-overlay-background-color);
+  z-index: 50;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  padding: 10px;
+  height: fit-content;
+  width: 60%;
+}
+
+.modal h3 {
+  font-size: 30px;
+  color: rgb(0, 255, 0);
+}
+
+.modal p {
+  padding: 0 10px;
+}
+
+.error h3 {
+  color: red;
+}
+
+.fade-out {
+  animation: fade-out 0.5s ease-out forwards;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.contact-modal-close-button {
+  position: absolute;
+  z-index: 100;
+  width: 50px;
+  height: 50px;
+  top: -6.5%;
+  right: -3%;
+}
+
+.contact-modal-close-button svg {
+  transition: 0.1s ease-out;
+}
+
+.contact-modal-close-button svg:hover {
+  transform: scale(1.1);
+}
+
+.close-svg-outer-path {
+  fill: transparent;
+  fill: black;
+}
+
+.close-svg-inner-path {
+  fill: white;
+}
+
+.contact-modal-close-button svg:hover .close-svg-outer-path {
+  fill: red;
 }

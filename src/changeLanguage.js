@@ -40,14 +40,13 @@ export default function changeLanguage(isEnglish) {
         I'm thrilled to showcase my work in creating web applications with React and also share my studies on different programming languages and frameworks.
 
         Explore my portfolio to learn more about my work and approach to programming. You'll find all my deployed projects, which are the result of my dedication, creativity, and continuous learning.`,
-      about: `I was born and currently reside in Capital Federal, Buenos Aires, Argentina. Throughout my career, I have gained valuable experience in various regular jobs, primarily in customer service and retail sales. These experiences have honed my interpersonal skills and taught me the importance of effective communication.
+      about: `I was born and currently reside in Capital Federal, Buenos Aires, Argentina. Throughout my career, I have gained valuable experience in various regular jobs, primarily in customer service and retail sales. These experiences have polished my interpersonal skills and taught me the importance of effective communication.
 
         However, it was not until recently that I discovered my true passion when I embarked on the journey of programming and web development. While on a React bootcamp over the past few months i've dedicated myself to honing my skills in programming with a specific focus on creating user-friendly interfaces and providing a wide range of user options.
         
-        I'm a hard-working person, organiced and good at solving problems and finding different solutions.
-        My goal is to create innovative and user-centric solutions that not only fulfill the technical requirements but also enhance the overall user experience. I am currently seeking opportunities to grow both professionally and personally in this dynamic field.
+        I am a hardworking, organized, and problem-solving person. My goal is to create innovative solutions that enhance the user experience, while meeting technical requirements and offering intuitive design. I value reliability and credibility in my work, and I strive to be someone others can trust, by meeting deadlines and delivering high-quality results.
         
-        I'm excited to be a part of the developer community and look forward to continuing to grow in this exciting discipline.`,
+        Currently, I am seeking opportunities to grow both professionally and personally in this dynamic field. I am excited to be part of the developer community and look forward to continuing my growth in this exciting discipline.`,
       dogsTitle: 'Dogs',
       dogsAppType: 'Desktop Only',
       dogsDescription: `Web App showcasing detailed information about various dog breeds with the ability to search, sort and filter by multiple parameters simultaneously and chose the amount of data cards displayed per page. Additionally, it provides the option to create a new dog breed with the information of your preference and seamlessly switch between metric and imperial measurements for the entire site's input and output.`,
@@ -65,7 +64,7 @@ export default function changeLanguage(isEnglish) {
       Load and save functionality with manual and autosave options for each aformentioned feature. 
       Personal info and email and password editing.`,
       countriesTitle: 'Countries Comming Soon',
-      countriesAppType: 'Desktop Only',
+      countriesAppType: '',
       countriesDescription: 'A full stack application that allows users to search for countries and view their information.',
       clothingStoreTitle: 'Clothing Store Comming Soon',
       clothingStoreAppType: 'Desktop Only',
@@ -212,7 +211,31 @@ export default function changeLanguage(isEnglish) {
       emailPlaceholder: 'Email',
       subjectPlaceholder: 'Subject',
       messagePlaceholder: 'Message',
-      contactSendButton: 'Send'
+      contactSendButton: 'Send',
+      nameError: 'Must be a valid name.',
+      emailError: 'Must be a valid email.',
+      subjectError: '',
+      messageError: 'The message must have between 50 and 500 characters',
+      contactModalSuccessTitle: 'Success',
+      contactModalSuccessSubtitle: 'Your message has been sent succesfully!',
+      contactModalSuccessMessage: `Thank you for reaching out, i appreciate your interest in my work and will get back to you as soon as possible. Your contact and inquiries are important to me and i look forward to connecting with you.
+
+      If you have any important matters please don't hesitate to call me directly at the provided phone number.
+
+      Again, thank you for sending me you message, and have a wonderful day!
+
+      Best regards,
+      Gaston Monzon Full Stack Junior Developer`,
+      contactModalErrorTitle: 'Error',
+      contactModalErrorSubtitle: 'Message not sent',
+      contactModalErrorMessage: `There was an issue while attempting to send your message, i apologize for the inconvenience and assure you that I will address it very soon.
+      
+      If the problem persists, please contact me using the information provided or call me directly at the given phone number.
+
+      Nevertheless, i appreciate your interest in my work and for reaching out, your contact and inquiries are important to me. Have a wonderful day i look forward to connecting with you!.
+      
+      Best regards,
+      Gaston Monzon Full Stack Junior Developer`,
     }
   } else {
     return {
@@ -227,13 +250,13 @@ export default function changeLanguage(isEnglish) {
       Estoy encantado de exhibir mi trabajo en la creación de aplicaciones web con React y también compartir mis estudios sobre diferentes lenguajes de programación y frameworks.
       
       Explora mi portafolio para conocer más sobre mi trabajo y enfoque en la programación. Encontrarás todos mis proyectos desplegados, que son el resultado de mi dedicación, creatividad y aprendizaje continuo.`,
-      about: `Nací y actualmente resido en Capital Federal, Buenos Aires, Argentina. A lo largo de mi carrera, he adquirido una valiosa experiencia en diversos empleos regulares, principalmente en atención al cliente y ventas minoristas. Estas experiencias han pulido mis habilidades interpersonales y me han enseñado la importancia de la comunicación efectiva.
+      about: `Nací y actualmente resido en Capital Federal, Buenos Aires, Argentina. A lo largo de mi carrera, he adquirido valiosas experiencias en diversos empleos regulares, principalmente en atención al cliente y ventas minoristas. Estas experiencias han pulido mis habilidades interpersonales y me han enseñado la importancia de la comunicación efectiva.
 
-      Sin embargo, no fue hasta hace poco que descubrí mi verdadera pasión cuando me embarqué en el viaje de la programación y el desarrollo web. Durante un bootcamp de React en los últimos meses, me he dedicado a perfeccionar mis habilidades en programación, con un enfoque específico en la creación de interfaces amigables para el usuario y proporcior una amplia gama de opciones para los usuarios.
+      Sin embargo, no fue hasta hace poco que descubrí mi verdadera pasión cuando me embarqué en el viaje de la programación y el desarrollo web. Durante un bootcamp de React en los últimos meses, me he dedicado a perfeccionar mis habilidades en programación, con un enfoque específico en la creación de interfaces amigables para el usuario y proporcionar una amplia gama de opciones.
       
-      Soy una persona trabajadora, organizada y buena para resolver problemas y encontrar diferentes soluciones. Mi objetivo es crear soluciones innovadoras centradas en el usuario que no solo cumplan con los requisitos técnicos, sino que también potencien la experiencia de este. Actualmente, estoy buscando oportunidades para crecer tanto profesional como personalmente en este ámbito dinámico.
+      Soy una persona trabajadora, organizada y buena para resolver problemas. Mi objetivo es crear soluciones innovadoras que potencien la experiencia del usuario, cumpliendo con los requisitos técnicos y ofreciendo un diseño intuitivo. Valoro la confiabilidad y la credibilidad en mi trabajo y me esfuerzo por ser una persona en la que los demás puedan confiar, cumpliendo con los plazos establecidos y entregando resultados de calidad.
       
-      Estoy emocionado de ser parte de la comunidad de desarrolladores y espero seguir creciendo en esta emocionante disiplina.`,
+      Actualmente, estoy buscando oportunidades para crecer tanto profesional como personalmente en este ámbito dinámico. Estoy emocionado de ser parte de la comunidad de desarrolladores y espero seguir creciendo en esta emocionante disciplina.`,
       dogsTitle: 'Dogs',
       dogsAppType: 'Solo Computadora',
       dogsDescription: `Aplicación web que muestra información detallada sobre diversas razas de perros obtenidas de The Dog API, con la capacidad de buscar, ordenar y filtrar por múltiples parámetros simultáneamente y elegir la cantidad de tarjetas de datos mostradas por página. Adicionalmente, proporciona la opción de crear una nueva raza de perro con la información de tu preferencia y cambiar fluidamente entre medidas métricas e imperiales para toda la entrada y salida del sitio.`,
@@ -254,7 +277,7 @@ export default function changeLanguage(isEnglish) {
       countriesAppType: 'Web App Responsive | Desktop | Tablet | Mobile',
       countriesDescription: 'Una aplicación full stack que permite a los usuarios buscar países y ver su información.',
       clothingStoreTitle: 'Tienda De Ropa Proximamente',
-      clothingStoreAppType: 'Solo Computadora',
+      clothingStoreAppType: '',
       clothingStoreDescription: 'Aplicación web de comercio electrónico de ropa y calzado con búsqueda integrada por categoría, filtros y opciones de ordenamiento. Registro y inicio de sesión de usuarios seguros en Firebase con soporte para inicio de sesión de terceros y acceso a información personal, favoritos y compras. Agrega artículos fácilmente a tu carrito y realiza el pago de forma segura utilizando métodos de pago confiables con Stripe. Visualiza las reseñas de otros usuarios y crea tus propias reseñas para los artículos comprados. Incluye funciones de administrador como aceptar o cancelar reseñas, crear o editar productos, y administrar usuarios y compras.',
       madeWith: 'Hecho con:',
       gitHubButton: 'Ver Código',
@@ -393,12 +416,38 @@ export default function changeLanguage(isEnglish) {
       ],
       contactMessage: `¿Tienes algún interés o alguna pregunta?
       No dude en ponerse en contacto conmigo completando el formulario a continuación o comunicándose utilizando la información de contacto proporcionada.`,
-      location: 'Current Location',
-      namePlaceholder: 'Your nombre',
+      location: 'Localidad Actual',
+      namePlaceholder: 'Su nombre',
       emailPlaceholder: 'Email',
       subjectPlaceholder: 'Asunto',
       messagePlaceholder: 'Mensaje',
-      contactSendButton: 'Enviar'
+      contactSendButton: 'Enviar',
+      nameError: 'Debe ser un nombre válido.',
+      emailError: 'Debe ser un Email válido.',
+      subjectError: '',
+      messageError: 'El mensaje debe tener entre 50 y 500 caracteres',
+      contactModalSuccessTitle: 'Éxito',
+      contactModalSuccessSubtitle: '¡Tu mensaje fue enviado exitosamente!',
+      contactModalSuccessMessage: `Gracias por contactarme, aprecio tu interés en mi trabajo y voy a responderte lo antes posible. Tu contacto y consultas son importantes para mí y espero comunicarme con vos.
+
+      Si tenes un asunto importante por favor no dudes en llamarme directamente al número de teléfono provisto.
+      
+      Una vez más, gracias por enviarme tu mensaje y ¡que tengas un maravilloso día!
+      
+      Saludos cordiales,
+      Gaston Monzon
+      Desarrollador Full Stack Junior`,
+      contactModalErrorTitle: 'Error',
+      contactModalErrorSubtitle: 'Mensaje no enviado',
+      contactModalErrorMessage: `Hubo un problema al intentar enviar tu mensaje, me disculpo por las molestias y puedo asegurar que lo voy a resolver pronto.
+
+      Si el problema persiste, por favor contactame utilizando la información proporcionada o llamame directamente al número de teléfono provisto.
+      
+      De todas maneras, aprecio tu interés en mi trabajo y por intentar enviar este mensaje, tu contacto y consultas son importantes para mí. ¡Que tengas un maravilloso día y espero comunicarme con vos!
+      
+      Saludos cordiales,
+      Gaston Monzon
+      Desarrollador Full Stack Junior`,
     }
   }
 }
