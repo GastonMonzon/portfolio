@@ -103,7 +103,7 @@
 
 .fullscreen-overlay button {
   position: absolute;
-  top: 11vh;
-  right: 1%;
-  border: solid red 1px;
+  top: 0;
+  right: 0;
+  transform: scale(1.2);
 }
