@@ -66,7 +66,6 @@ export default function Contact({ textContent }) {
           throttle: 10000,
         },
       });
-      console.log(VITE_EMAIL_SERVICE_ID, VITE_EMAIL_TEMPLATE_ID, VITE_EMAIL_PUBLIC_ID);
       await emailjs.send(
         VITE_EMAIL_SERVICE_ID,
         VITE_EMAIL_TEMPLATE_ID,
