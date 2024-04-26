@@ -2,17 +2,35 @@
   font-family: 'futura-light';
   src: url('../src/assets/fonts/FUTURA45LIGHT.TTF');
 }
+
 @font-face {
   font-family: 'futura';
   src: url('../src/assets/fonts/FUTURA55REGULAR.TTF');
 }
+
 @font-face {
   font-family: 'futura-medium';
   src: url('../src/assets/fonts/FUTURA65MEDIUM.TTF');
 }
+
 @font-face {
   font-family: 'futura-bold';
   src: url('../src/assets/fonts/FUTURA75BOLD.TTF');
+}
+
+@font-face {
+  font-family: 'futura';
+  src: url('../src/assets/fonts/FUTURA55REGULAR.TTF');
+}
+
+@font-face {
+  font-family: 'Lucida Grande';
+  src: url('../src/assets/fonts/LUCIDAG.TTF');
+}
+
+@font-face {
+  font-family: 'Lucida Grande Bold';
+  src: url('../src/assets/fonts/LUCIDAGB.TTF');
 }
 
 :root {
@@ -93,15 +111,75 @@ p {
   white-space: pre-line;
 }
 
+.slide-bottom {
+  animation: slide-bottom 2s cubic-bezier(0.190, 1.000, 0.220, 1.000) forwards;
+}
+
+@keyframes slide-bottom {
+  0% {
+    transform: translateY(-200%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.slide-right {
+  animation: slide-right 2s cubic-bezier(0.190, 1.000, 0.220, 1.000) forwards;
+}
+
+.slide-right-longer {
+  animation: slide-right 2.5s cubic-bezier(0.190, 1.000, 0.220, 1.000) forwards;
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(-120vw);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.slide-left {
+  animation: slide-left 2s cubic-bezier(0.190, 1.000, 0.220, 1.000) forwards;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(120vw);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.teleport-top {
+  transform: translateY(200%);
+}
+
+.teleport-right {
+  transform: translateX(-120vw);
+}
+
+.teleport-left {
+  transform: translateX(120vw);
+}
+
 
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }

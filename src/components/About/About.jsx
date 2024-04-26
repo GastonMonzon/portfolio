@@ -27,9 +27,9 @@ export default function About({ textContent }) {
             <p ref={aboutInfoRef} >{textContent.about}</p>
           </div>
         </section>
-        {handleAnimation(aboutInView, aboutTitleRef, 'slide-about-title-right', 'slide-about-title-left')}
-        {handleAnimation(aboutInView, aboutImageRef, 'slide-about-image-right', 'slide-about-image-left')}
-        {handleAnimation(aboutInView, aboutInfoRef, 'slide-about-info-right', 'slide-about-info-left')}
+        {handleAnimation(aboutInView, aboutTitleRef, 'slide-left', 'teleport-right')}
+        {handleAnimation(aboutInView, aboutImageRef, 'slide-right-longer', 'teleport-left')}
+        {handleAnimation(aboutInView, aboutInfoRef, 'slide-right', 'teleport-left')}
       </div>
   )
 }

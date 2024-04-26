@@ -9,7 +9,7 @@ export default function Headline({ textContent }) {
 
   const [headlineInViewRef, headlineInView] = useInView({
     triggerOnce: false,
-    threshold: 0.2,
+    threshold: 0,
   });
 
   return (
@@ -18,8 +18,8 @@ export default function Headline({ textContent }) {
       <h2 ref={headlineTitleRef} >{textContent.headLine}</h2>
       <p ref={headlineInfoRef} >{textContent.intro}</p>
     </section>
-    {handleAnimation(headlineInView, headlineTitleRef, 'slide-headline-title-bottom', 'slide-headline-title-top')}
-    {handleAnimation(headlineInView, headlineInfoRef, 'slide-headline-info-left', 'slide-headline-info-right')}
+    {handleAnimation(headlineInView, headlineTitleRef, 'slide-bottom', 'teleport-top')}
+    {handleAnimation(headlineInView, headlineInfoRef, 'slide-left', 'teleport-right')}
   </div>
   )
 }
