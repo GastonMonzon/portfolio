@@ -6,6 +6,137 @@
   margin-bottom: 20px;
 }
 
+.contact-container a,
+.contact-container p {
+  width: fit-content;
+}
+
+.contact-info-container {
+  width: 30vw;
+  padding-right: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-info-container iframe {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding-right: 10px;
+}
+
+.contact-text-copy {
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  position: relative;
+  transition: 0.2 ease-out;
+  cursor: pointer;
+}
+
+.contact-text-copy p {
+  width: fit-content;
+  height: fit-content;
+  background-color: black;
+  border-radius: 10px;
+  padding: 0 5px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  position: absolute;
+  left: 110%;
+  transition: 0.2 ease-out;
+  visibility: hidden;
+}
+
+.contact-text-copy:hover .copy-modal {
+  visibility: visible;
+  animation: blur-appear-copy-modal 0.5s cubic-bezier(0.190, 1.000, 0.220, 1.000) forwards;
+}
+
+@keyframes blur-appear-copy-modal {
+  0% {
+    transform: scale(0.5);
+    filter: blur(4px);
+    opacity: 0;
+  }
+  
+  100% {
+    transform: scale(1);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+
+.argentina-icon-container {
+  display: flex;
+  height: 30px;
+}
+
+.argentina-icon-container img {
+  width: 30px;
+  margin-right: 5px;
+}
+
+.links-below-container {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+
+.links-below-button {
+  width: 65px;
+  min-width: 65px;
+  height: 65px;
+  min-height: 65px;
+  border-radius: 20px;
+}
+
+.links-below-button:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.links-below-button img {
+  padding: 5px;
+  transform: rotate(90deg);
+}
+
+.links-below-button-bounce {
+  animation: up-down-arrow-heartbeat 2.5s infinite linear forwards;
+}
+
+@keyframes up-down-arrow-heartbeat {
+  0% {
+  transform: translateY(0) rotate(90deg);
+  }
+
+  25% {
+    transform: translateY(0) rotate(90deg);
+  }
+
+  40% {
+    transform: translateY(2vh) rotate(90deg);
+  }
+
+  50% {
+    transform: translateY(-2vh) rotate(90deg);
+  }
+
+  60% {
+    transform: translateY(2vh) rotate(90deg);
+  }
+
+  70% {
+    transform: translateY(0) rotate(90deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(90deg);
+  }
+}
+
 form {
   display: grid;
   grid-template-columns: 1fr;
@@ -13,6 +144,8 @@ form {
   gap: 20px;
   font-family: inherit;
   font-size: inherit;
+  position: relative;
+  z-index: 0;
 }
 
 .name-email-container {

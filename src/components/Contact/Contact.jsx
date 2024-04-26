@@ -1,17 +1,159 @@
 import './Contact.css';
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { useInView } from 'react-intersection-observer';
+import argentinaIcon from '../../assets/icons/argentina-icon.svg';
+import nextIcon from '../Carousel/Carrousel icons/next.svg';
+
 import emailjs from 'emailjs-com';
+import handleAnimation from '../../animationUtils';
 
 const { VITE_EMAIL_SERVICE_ID, VITE_EMAIL_TEMPLATE_ID, VITE_EMAIL_PUBLIC_ID, VITE_EMAIL_PRIVATE_ID } = import.meta.env;
 
 export default function Contact({ textContent }) {
 
-  const [contactInfo, setContactInfo] = useState({ name: '', email: '', subject: '', message: '' });
-  const [contactInfoErrorToggle, setContactInfoErrorToggle] = useState({ name: true, email: true, subject: false, message: true });
-  const [wordCounts, setWordCounts] = useState({ name: 0, email: 0, subject: 0, message: 0 });
+  const [copyModal, setCopyModal] = useState({ 
+    location: { text: textContent.copyLocation, isCopied: false }, 
+    email: { text: textContent.copyEmail, isCopied: false }, 
+    phone: { text: textContent.copyNumber, isCopied: false } });
+
+  const [isAtBottom, setIsAtBottom] = useState(false);
+  const [contactInfo, setContactInfo] = useState({ 
+    name: '', 
+    email: '', 
+    subject: '', 
+    message: '' });
+
+  const [contactInfoErrorToggle, setContactInfoErrorToggle] = useState({ 
+    name: true, 
+    email: true, 
+    subject: false, 
+    message: true });
+
+  const [wordCounts, setWordCounts] = useState({ 
+    name: 0, 
+    email: 0, 
+    subject: 0, 
+    message: 0 });
+
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-  const [contactModalInfo, setContactModalInfo] = useState({ errorClassName: '', title: '', subtitle: '', message: '' });
+  const [contactModalInfo, setContactModalInfo] = useState({ 
+    errorClassName: '', 
+    title: '', 
+    subtitle: '', 
+    message: '' });
+
+  const contactSubitleRef = useRef();
+  const contactInfoRef = useRef();
+  const contactNameRef = useRef();
+  const contactEmailRef = useRef();
+  const contactSubjectRef = useRef();
+  const contactMessageRef = useRef();
+  const contactButtonRef = useRef();
+
+  const [contactInViewRef, contactInView] = useInView({
+    triggerOnce: false,
+    threshold: 0,
+  });
+
+  useEffect(() => {
+    setCopyModal((prevCopyModal) => ({
+      location: { ...prevCopyModal.location, text: textContent.copyLocation },
+      email: { ...prevCopyModal.email, text: textContent.copyEmail },
+      phone: { ...prevCopyModal.phone, text: textContent.copyNumber }
+    }));
+  }, [textContent]);
+
+  const handleCopyClick = async (name) => {
+    try {
+      switch (name) {
+        case 'location':
+          await navigator.clipboard.writeText('Capital Federal, Buenos Aires, Argentina');
+          setCopyModal({
+            ...copyModal,
+            location: { text: textContent.copyLocationSuccess, isCopied: true }
+          });
+          break;
+        case 'email':
+          await navigator.clipboard.writeText('gastonmonzon3@gmail.com');
+          setCopyModal({
+            ...copyModal,
+            email: { text: textContent.copyEmailSuccess, isCopied: true }
+          });
+          break;
+        case 'phone':
+          await navigator.clipboard.writeText('+5491131449224');
+          setCopyModal({
+            ...copyModal,
+            phone: { text: textContent.copyNumberSuccess, isCopied: true }
+          });
+          break;
+        default:
+          break;
+      }
+    } catch (error) {
+      console.error(error);
+      switch (name) {
+        case 'location':
+          setCopyModal({
+            ...copyModal,
+            location: { text: textContent.copyLocationError, isCopied: true }
+          });
+          break;
+        case 'email':
+          setCopyModal({
+            ...copyModal,
+            email: { text: textContent.copyEmailError, isCopied: true }
+          });
+          break;
+        case 'phone':
+          setCopyModal({
+            ...copyModal,
+            phone: { text: textContent.copyNumberError, isCopied: true }
+          });
+          break;
+        default:
+          break;
+      }
+    }
+  }
+  const handleCopyTextReset = (name) => {
+    if (copyModal[name].isCopied) {
+      switch (name) {
+        case 'location':
+          setCopyModal({
+            ...copyModal,
+            location: { text: textContent.copyLocation, isCopied: false }
+          });
+          break;
+        case 'email':
+          setCopyModal({
+            ...copyModal,
+            email: { text: textContent.copyEmail, isCopied: false }
+          });
+          break;
+        case 'phone':
+          setCopyModal({
+            ...copyModal,
+            phone: { text: textContent.copyNumber, isCopied: false }
+          });
+          break;
+        default:
+          break;
+      }
+    }
+  }
+  const handleScroll = () => {
+    const isBottom =
+      window.innerHeight + window.pageYOffset >= document.body.offsetHeight;
+    setIsAtBottom(isBottom);
+  };
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const handleContactChange = (event) => {
     const { name, value } = event.target;
@@ -22,7 +164,6 @@ export default function Contact({ textContent }) {
       [name]: value,
     }));
   }
-
   const validation = (contact) => {
     const errors = {};
     const nameRegex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
@@ -46,10 +187,8 @@ export default function Contact({ textContent }) {
     if (contact.message.length < 50) {
       errors.message = true;
     }
-
     return errors
   }
-
   const handleContact = async (event) => {
     event.preventDefault();
     try {
@@ -57,13 +196,10 @@ export default function Contact({ textContent }) {
       emailjs.init({
         publicKey: VITE_EMAIL_PUBLIC_ID,
         privateKey: VITE_EMAIL_PRIVATE_ID,
-        // Do not allow headless browsers
-        blockHeadless: true,
-        limitRate: {
-          // Set the limit rate for the application
+        blockHeadless: true, // Do not allow headless browsers
+        limitRate: { // Set the limit rate for the application
           id: 'app',
-          // Allow 1 request per 10s
-          throttle: 10000,
+          throttle: 10000, // Allow 1 request per 10s
         },
       });
       await emailjs.send(
@@ -89,7 +225,6 @@ export default function Contact({ textContent }) {
       setIsContactModalOpen(true);
     }
   }
-
   const handleCloseModal = () => {
     const modal = document.getElementById('modal-overlay')
     modal?.classList.toggle('fade-out');
@@ -102,16 +237,47 @@ export default function Contact({ textContent }) {
   }
 
   return (
-    <section id='contact' >
+    <section id='contact' ref={contactInViewRef} >
       <h2>{textContent.contactButton}</h2>
-      <p>{textContent.contactMessage}</p>
+      <p ref={contactSubitleRef} >{textContent.contactMessage}</p>
       <div className='contact-container' >
-        <div>
+        <div ref={contactInfoRef} className='contact-info-container' >
           <h3>INFO</h3>
           <h4>{textContent.location}</h4>
-          <p>Capital Federal, Buenos Aires, Argentina</p>
+          <p
+            className='contact-text-copy'
+            onClick={() => handleCopyClick('location')}
+            onMouseLeave={() => handleCopyTextReset('location')}
+          >
+            Capital Federal, Buenos Aires, Argentina
+            <p className='copy-modal' >{copyModal.location.text}</p>
+          </p>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d210147.8514767034!2d-58.7286831392918!3d-34.61528163000272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca3d05457fbb%3A0xe160f4fce7f7c017!2sCdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1714128248338!5m2!1ses-419!2sar" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
           <h4>Email:</h4>
-          <p>gastonmonzon3@gmail.com</p>
+          <p
+            className='contact-text-copy'
+            onClick={() => handleCopyClick('email')}
+            onMouseLeave={() => handleCopyTextReset('email')}
+          >
+            gastonmonzon3@gmail.com
+            <p className='copy-modal' >{copyModal.email.text}</p>
+          </p>
+          <h4>{textContent.phoneNumber}</h4>
+          <p
+            className='argentina-icon-container contact-text-copy'
+            onClick={() => handleCopyClick('phone')}
+            onMouseLeave={() => handleCopyTextReset('phone')}
+          >
+            <img src={argentinaIcon} alt='Argentina Icon' />
+            +54 9 11 3144 9224
+            <p className='copy-modal' >{copyModal.phone.text}</p>
+          </p>
+          <div className='links-below-container' >
+            <p>{textContent.linksBelow}</p>
+            <button className='links-below-button' onClick={() => window.scrollTo({top: document.documentElement.scrollHeight, behavior: 'smooth'})} >
+              <img src={nextIcon} alt='nextIcon' className={!isAtBottom ? 'links-below-button-bounce' : ''} />
+            </button>
+          </div>
         </div>
         <form onSubmit={handleContact} >
           <div className='name-email-container' >
@@ -119,6 +285,7 @@ export default function Contact({ textContent }) {
               type='text'
               name='name'
               maxLength={50}
+              ref={contactNameRef}
               placeholder={textContent.namePlaceholder}
               value={contactInfo.name}
               onChange={handleContactChange}
@@ -127,6 +294,7 @@ export default function Contact({ textContent }) {
               type='email'
               name='email'
               maxLength={50}
+              ref={contactEmailRef}
               placeholder={textContent.emailPlaceholder}
               value={contactInfo.email}
               onChange={handleContactChange}
@@ -136,6 +304,7 @@ export default function Contact({ textContent }) {
             type='text'
             name='subject'
             maxLength={50}
+            ref={contactSubjectRef}
             placeholder={textContent.subjectPlaceholder}
             value={contactInfo.subject}
             onChange={handleContactChange}
@@ -144,6 +313,7 @@ export default function Contact({ textContent }) {
             name='message'
             rows={10}
             maxLength={500}
+            ref={contactMessageRef}
             placeholder={textContent.messagePlaceholder}
             value={contactInfo.message}
             onChange={handleContactChange}
@@ -164,7 +334,7 @@ export default function Contact({ textContent }) {
                 {contactInfoErrorToggle.message ? '❌' : '✅'} {textContent.messageError}
               </p>
             </div>
-            <div className='wordcount-send-container' >
+            <div className='wordcount-send-container' ref={contactButtonRef} >
               <label>{wordCounts.message} / 500</label>
               <div className={`button-background-container ${(!contactInfo.name || !contactInfo.email || !contactInfo.message || contactInfoErrorToggle.name || contactInfoErrorToggle.email || contactInfoErrorToggle.subject || contactInfoErrorToggle.message) ? 'disabled-container' : ''}`} >
                 <button
@@ -198,7 +368,15 @@ export default function Contact({ textContent }) {
             </svg>
           </button>
         </div>
-      </div>}
+      </div>
+      }
+      {handleAnimation(contactInView, contactSubitleRef, 'slide-left', 'teleport-right')}
+      {handleAnimation(contactInView, contactInfoRef, 'slide-right', 'teleport-left')}
+      {handleAnimation(contactInView, contactNameRef, 'slide-left', 'teleport-right')}
+      {handleAnimation(contactInView, contactEmailRef, 'slide-right', 'teleport-left')}
+      {handleAnimation(contactInView, contactSubjectRef, 'slide-left', 'teleport-right')}
+      {handleAnimation(contactInView, contactMessageRef, 'slide-right', 'teleport-left')}
+      {handleAnimation(contactInView, contactButtonRef, 'slide-left', 'teleport-right')}
     </section >
   )
 }
