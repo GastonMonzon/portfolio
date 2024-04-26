@@ -292,7 +292,7 @@ export default function changeLanguage(isEnglish) {
       clothingStoreDescription: 'Aplicación web de comercio electrónico de ropa y calzado con búsqueda integrada por categoría, filtros y opciones de ordenamiento. Registro y inicio de sesión de usuarios seguros en Firebase con soporte para inicio de sesión de terceros y acceso a información personal, favoritos y compras. Agrega artículos fácilmente a tu carrito y realiza el pago de forma segura utilizando métodos de pago confiables con Stripe. Visualiza las reseñas de otros usuarios y crea tus propias reseñas para los artículos comprados. Incluye funciones de administrador como aceptar o cancelar reseñas, crear o editar productos, y administrar usuarios y compras.',
       madeWith: 'Hecho con:',
       gitHubButton: 'Ver Código',
-      deployButton: 'Deployar App',
+      deployButton: 'Desplegar App',
       skills: [
         {
           name: 'HTML5',
