@@ -10,18 +10,13 @@
 }
 
 #footer a {
+  display: flex;
+  align-items: center;
   transition: 0.2s ease-out;
 }
 
 #footer a:hover {
   transform: scale(1.1);
-}
-
-
-.github-container {
-  margin-top: -5px;
-  width: 50px;
-  height: 50px;
 }
 
 .linked-in-container {
@@ -32,6 +27,47 @@
 .linked-in-container img {
   margin-top: -25px;
 }
+
+.footer-icon-container {
+  width: 50px;
+  height: 50px;
+}
+
+.github-container {
+  width: 55px;
+  height: 40px;
+  padding: 0;
+
+}
+.github-container img {
+  width: 55px;
+  height: 100%;
+}
+
+.whatsapp-container {
+  width: 75px;
+  height: 45px;
+  padding: 0;
+}
+
+.whatsapp-container img {
+  width: 75px;
+  height: 100%;
+}
+
+.telegram-container {
+  font-family: 'Lucida Grande';
+  font-size: 15px;
+  padding: 0;
+  width: fit-content;
+  color: white;
+}
+
+.telegram-container:hover {
+  color: white;
+  text-shadow: 0 0 1px white;
+}
+
 
 .cv-link-contianer {
   height: 40px;
