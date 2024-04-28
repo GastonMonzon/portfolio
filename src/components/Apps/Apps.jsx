@@ -342,7 +342,7 @@ export default function Apps({ textContent }) {
               {handleAnimation(app.viewValue, app.titleRef, 'blur-appear-app-title', 'nothing')}
               {handleAnimation(app.viewValue, app.appTypeRef, 'slide-right', 'teleport-left')}
               {handleAnimation(app.viewValue, app.infoRef, 'slide-left', 'teleport-right')}
-              {handleAnimation(app.viewValue, app.imagesRef, 'slide-right', 'teleport-left')}
+              {/* {handleAnimation(app.viewValue, app.imagesRef, 'slide-right', 'nothing')} */}
             </div>
           ))}
         </div>

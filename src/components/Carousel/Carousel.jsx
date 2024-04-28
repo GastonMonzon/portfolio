@@ -61,17 +61,19 @@ export default function Carousel({ images }) {
     if (!isFullscreen) {
       setIsFullscreen(true);
       stopAutoScroll();
+      document.documentElement.style.overflow = 'hidden';
     }
   }
   const exitFullscreen = () => {
     setIsFullscreen(false);
     stopAutoScroll();
+    document.documentElement.style.overflow = '';
   }
 
   return (
     <>
-      <div className={`hero-images-bar-container ${isFullscreen ? 'fullscreen-container' : ''}`} >
-        <div className={`hero-images-container ${isFullscreen ? 'fullscreen-image' : ''}`} >
+      <div className={`${isFullscreen ? 'fullscreen-container' : 'hero-images-bar-container'}`} >
+        <div className={`${isFullscreen ? 'fullscreen-image' : 'hero-images-container'}`} >
           {images.map((image, index) => (
             <img
               key={index}

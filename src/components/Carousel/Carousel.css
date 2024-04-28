@@ -31,7 +31,6 @@
   border: none;
   border-radius: 10px;
   background: transparent;
-  /* overflow: hidden; */
   cursor: pointer;
 }
 
@@ -77,15 +76,37 @@
   cursor: pointer;
 }
 
-.fullscreen-container {
+.fullscreen-overlay {
   position: fixed;
-  top: 48%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(3px);
+  z-index: 10;
+}
+
+.fullscreen-overlay button {
+  top: 0;
+  right: 0;
+  transform: scale(1.1);
+}
+
+.fullscreen-container {
+  display: flex;
+  margin: 0 auto;
+  position: fixed;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 20;
+  background-color: transparent;
+  z-index: 15;
 }
 
 .fullscreen-image {
+  display: flex;
+  overflow: hidden;
   width: 78vw;
 }
 
@@ -94,27 +115,10 @@
 }
 
 .fullscreen-radio {
-  bottom: -4%;
+  bottom: -2.5%;
   background-color: black;
 }
 
 .fullscreen-radio:hover {
-  bottom: -0.5%;
-}
-
-.fullscreen-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(0, 0, 0, 0.3);
-  z-index: 15;
-}
-
-.fullscreen-overlay button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  transform: scale(1.1);
+  bottom: 1%;
 }
