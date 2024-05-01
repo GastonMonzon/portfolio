@@ -6,6 +6,7 @@ import githubIcon from '../../assets/icons/github-icon.svg';
 import whatsappNameIcon from '../../assets/icons/whatsapp-name-icon.svg';
 import whatsappIcon from '../../assets/icons/whatsapp-app-icon.svg';
 import telegramIcon from '../../assets/icons/telegram-icon.svg';
+import cv from '../../assets/pdfs/Gaston Monzon CV.pdf';
 import cvIcon2 from '../../assets/icons/cv-icon2.svg';
 import cvIcon3 from '../../assets/icons/cv-icon3.svg';
 import { useEffect, useState } from 'react';
@@ -60,14 +61,14 @@ export default function Footer() {
           <img src={telegramIcon} alt='Telegram link' />
         </button>
       </a>
-      {/* <a className='cv-link-contianer' href='https://github.com/GastonMonzon' rel='noreferrer' target='_blank' >
+      <a className='cv-link-contianer' href={cv} rel='noreferrer' target='_blank' >
         <button className='cv-link-button' >
           CV
         </button>
         <button className='cv-link-icon' >
           <img src={cvIcon3} alt='Github link' />
         </button>
-      </a> */}
+      </a>
     </footer>
   )
 }

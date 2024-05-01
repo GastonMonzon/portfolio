@@ -12,36 +12,41 @@ const { VITE_EMAIL_SERVICE_ID, VITE_EMAIL_TEMPLATE_ID, VITE_EMAIL_PUBLIC_ID, VIT
 
 export default function Contact({ textContent }) {
 
-  const [copyModal, setCopyModal] = useState({ 
-    location: { text: textContent.copyLocation, isCopied: false }, 
-    email: { text: textContent.copyEmail, isCopied: false }, 
-    phone: { text: textContent.copyNumber, isCopied: false } });
+  const [copyModal, setCopyModal] = useState({
+    location: { text: textContent.copyLocation, isCopied: false },
+    email: { text: textContent.copyEmail, isCopied: false },
+    phone: { text: textContent.copyNumber, isCopied: false }
+  });
 
   const [isAtBottom, setIsAtBottom] = useState(false);
-  const [contactInfo, setContactInfo] = useState({ 
-    name: '', 
-    email: '', 
-    subject: '', 
-    message: '' });
+  const [contactInfo, setContactInfo] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
 
-  const [contactInfoErrorToggle, setContactInfoErrorToggle] = useState({ 
-    name: true, 
-    email: true, 
-    subject: false, 
-    message: true });
+  const [contactInfoErrorToggle, setContactInfoErrorToggle] = useState({
+    name: true,
+    email: true,
+    subject: false,
+    message: true
+  });
 
-  const [wordCounts, setWordCounts] = useState({ 
-    name: 0, 
-    email: 0, 
-    subject: 0, 
-    message: 0 });
+  const [wordCounts, setWordCounts] = useState({
+    name: 0,
+    email: 0,
+    subject: 0,
+    message: 0
+  });
 
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-  const [contactModalInfo, setContactModalInfo] = useState({ 
-    errorClassName: '', 
-    title: '', 
-    subtitle: '', 
-    message: '' });
+  const [contactModalInfo, setContactModalInfo] = useState({
+    errorClassName: '',
+    title: '',
+    subtitle: '',
+    message: ''
+  });
 
   const contactSubitleRef = useRef();
   const contactInfoRef = useRef();
@@ -145,7 +150,7 @@ export default function Contact({ textContent }) {
   }
   const handleScroll = () => {
     const isBottom =
-      window.innerHeight + window.pageYOffset >= document.body.offsetHeight;
+      window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 20;
     setIsAtBottom(isBottom);
   };
   useEffect(() => {
@@ -274,7 +279,7 @@ export default function Contact({ textContent }) {
           </p>
           <div className='links-below-container' >
             <p>{textContent.linksBelow}</p>
-            <button className='links-below-button' onClick={() => window.scrollTo({top: document.documentElement.scrollHeight, behavior: 'smooth'})} >
+            <button className='links-below-button' onClick={() => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' })} >
               <img src={nextIcon} alt='nextIcon' className={!isAtBottom ? 'links-below-button-bounce' : ''} />
             </button>
           </div>
