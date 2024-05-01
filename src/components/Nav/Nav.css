@@ -2,16 +2,14 @@
   position: fixed;
   background-color: black;
   border-bottom: 1px solid red;
-  width: 100%;
+  width: 100vw;
   display: grid;
   grid-template-columns: auto 1fr;
-  align-items: center;
   padding: 10px 20px;
   z-index: 10;
 }
 
 #nav h2 {
-  justify-self: start;
 }
 
 #nav div {
@@ -30,4 +28,27 @@
 .language-button {
   font-size: 16px;
   width: fit-content;
+}
+
+.menu-button {
+  justify-self: end;
+  align-content: start;
+  height: 50px;
+}
+
+.menu-button img {
+  height: 100%;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 999;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-self: end;
+  background-color: black;
+  border-bottom: 1px solid red;
 }
