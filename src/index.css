@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'futura-light';
-  src: url('../src/assets/fonts/FUTURA45LIGHT.TTF');
+  src: url('../src/assets/fonts/FUTURA45LIGHT.ttf');
 }
 
 @font-face {
@@ -87,6 +87,10 @@ button {
 
 button:hover {
   color: rgba(145, 47, 63, 0.7);
+}
+
+button:hover:disabled {
+  cursor: default;
 }
 
 a {

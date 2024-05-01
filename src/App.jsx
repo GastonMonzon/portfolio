@@ -11,20 +11,22 @@ import { useState, useEffect } from 'react'
 import Skills from './components/Skills/Skills';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
+import Documents from './components/Documents/Documents';
 
 function App() {
   const [isEnglish, setIsEnglish] = useState(true);
-  const [textContent, setTextContent] = useState({ 
-    homeButton: '', aboutButton: '', portfolioButton: '', skillsButton: '', contactButton: '', 
-    headLine: '', intro: '', 
-    dogsTitle: '', dogsAppType: '', dogsDescription: '', 
-    forzaTitle: '', forzaAppType: '', frozaDescription: '', 
-    rickAndMortyTitle: '', rickAndMortyAppType: '', rickAndMortyDescription: '', 
-    countriesTitle: '', countriesAppType: '', countriesDescription: '',
-    clothingStoreTitle: '', clothingStoreAppType: '', clothingStoreDescription: '', 
-    gitHubButton: '', deployButton: '', 
-    skills: [], 
-    contactMessage: '', location: '', namePlaceholder: '', emailPlaceholder: '', subjectPlaceholder: '', messagePlaceholder: '', contactSendButton: '' });
+  const [textContent, setTextContent] = useState(changeLanguage(true));
+  const [viewportWidth, setViewportwidth] = useState(0);
+
+  useEffect(() => {
+    function handleResize() {
+      setViewportwidth(window.innerWidth);
+    }
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     setTextContent(changeLanguage(isEnglish));
@@ -34,17 +36,17 @@ function App() {
     setIsEnglish(!isEnglish);
   }
 
-
   return (
     <>
       <BackGroundAnimation />
-      <Nav textContent={textContent} isEnglish={isEnglish} handleLanguageChange={handleLanguageChange} />
-      <Headline textContent={textContent} />
-      <About textContent={textContent} />
-      <Skills textContent={textContent} />
-      <Apps textContent={textContent} />
-      <Contact textContent={textContent} />
-      <Footer textContent={textContent} />
+      <Nav textContent={textContent} isEnglish={isEnglish} handleLanguageChange={handleLanguageChange} viewportWidth={viewportWidth} />
+      <Headline textContent={textContent} viewportWidth={viewportWidth} />
+      <About textContent={textContent} viewportWidth={viewportWidth} />
+      <Apps textContent={textContent} viewportWidth={viewportWidth} />
+      <Skills textContent={textContent} viewportWidth={viewportWidth} />
+      <Documents textContent={textContent} viewportWidth={viewportWidth} />
+      <Contact textContent={textContent} viewportWidth={viewportWidth} />
+      <Footer textContent={textContent} viewportWidth={viewportWidth} />
     </>
   )
 }

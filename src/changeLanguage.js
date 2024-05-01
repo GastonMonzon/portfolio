@@ -33,6 +33,7 @@ export default function changeLanguage(isEnglish) {
       aboutButton: 'About Me',
       portfolioButton: 'Portfolio',
       skillsButton: 'Skills',
+      documentsButton: 'Documents',
       contactButton: 'Contact',
       headLine: 'Full Stack Junior Developer',
       intro: `Welcome to my web portfolio!
@@ -254,6 +255,7 @@ export default function changeLanguage(isEnglish) {
       aboutButton: 'Sobre Mi',
       portfolioButton: 'Portfolio',
       skillsButton: 'Habilidades',
+      documentsButton: 'Documentos',
       contactButton: 'Contacto',
       headLine: 'Desarrollador Full Stack Junior',
       intro: `¡Bienvenido/a a mi portafolio web!
