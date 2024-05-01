@@ -6,6 +6,7 @@ import './Documents.css';
 import cv from '../../assets/pdfs/Gaston Monzon CV.pdf';
 import efSet from '../../assets/pdfs/EF SET Certificate.pdf';
 import aprobado from '../../assets/pdfs/Certificado Aprobacion Henry Bootcamp.pdf';
+import scrum from '../../assets/images/Certificado TSoft Agilidad-Introducción Scrum.png';
 import { useState } from 'react';
 
 export default function Documents({ textContent }) {
@@ -15,7 +16,7 @@ export default function Documents({ textContent }) {
 
   const showNextImage = () => {
     setIframeIndex(index => {
-      if (index === - 1) return - 1
+      if (index === - 2) return - 2
       return index - 1
     })
   }
@@ -29,7 +30,6 @@ export default function Documents({ textContent }) {
     const translateX = 70 * index;
     const scale = 1 - Math.abs(index) / 10;
     const zIndex = index === 0 ? 1 : 0;
-    console.log(index, translateX, scale);
     return {
       zIndex: zIndex,
       transform: `translateX(${translateX}%) scale(${scale})`,
@@ -48,26 +48,32 @@ export default function Documents({ textContent }) {
         >
         </button>
         <iframe
-          className="document documentLeft"
-          title="Certificado Aprobacion Henry Bootcamp"
+          className='document'
+          title='Certificado Aprobacion Henry Bootcamp'
           src={aprobado}
           style={getIframeStyle(iframeIndex - 1)}
         />
         <iframe
-          className="document"
-          title="Gaston Monzon CV"
+          className='document'
+          title='Gaston Monzon CV'
           src={cv}
           style={getIframeStyle(iframeIndex)}
         />
         <iframe
-          className="document documentRight"
-          title="EF SET Certificate"
+          className='document'
+          title='EF SET Certificate'
           src={efSet}
           style={getIframeStyle(iframeIndex + 1)}
         />
+        <img
+          src={scrum}
+          alt='Certificado TSoft Agilidad-Introducción Scrum'
+          className='document'
+          style={getIframeStyle(iframeIndex + 2)}
+        />
         <button
           className='document-button-right'
-          disabled={iframeIndex === - 1}
+          disabled={iframeIndex === - 2}
           onClick={showNextImage}
         >
         </button>
