@@ -108,7 +108,8 @@ export default function Nav({ textContent, isEnglish, handleLanguageChange, view
     <>
       <nav id='nav'>
         <h2>Gaston Monzon</h2>
-        {viewportWidth < 900 &&
+        <p className='pcOnly' >{textContent.pcOnly}</p>
+        {viewportWidth < 1000 &&
           <button
             className='menu-button'
             onClick={handleOpenMenu}
@@ -116,7 +117,7 @@ export default function Nav({ textContent, isEnglish, handleLanguageChange, view
           >
             <img src={menuIcon} alt='Menu Icon' />
           </button>}
-        {viewportWidth > 900 ?
+        {viewportWidth > 1000 ?
           <div>
             {navButtons.map((button) => {
               return (

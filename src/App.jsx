@@ -16,7 +16,7 @@ import Documents from './components/Documents/Documents';
 function App() {
   const [isEnglish, setIsEnglish] = useState(true);
   const [textContent, setTextContent] = useState(changeLanguage(true));
-  const [viewportWidth, setViewportwidth] = useState(0);
+  const [viewportWidth, setViewportwidth] = useState(window.innerWidth);
 
   useEffect(() => {
     function handleResize() {
