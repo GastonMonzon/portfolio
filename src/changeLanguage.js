@@ -29,7 +29,7 @@ import viteIcon from '../src/assets/icons/vite-icon.svg';
 export default function changeLanguage(isEnglish) {
   if (isEnglish) {
     return {
-      pcOnly: 'PC Only Responsive Coming Soon',
+      pcOnly: 'PC Only - Responsive Coming Soon',
       homeButton: 'Home',
       aboutButton: 'About Me',
       portfolioButton: 'Portfolio',
@@ -252,7 +252,7 @@ export default function changeLanguage(isEnglish) {
     }
   } else {
     return {
-      pcOnly: 'Solo PC Próximamente Responsive',
+      pcOnly: 'Solo PC - Próximamente Responsive',
       homeButton: 'Inicio',
       aboutButton: 'Sobre Mi',
       portfolioButton: 'Portfolio',

@@ -26,7 +26,8 @@ import gitIcon2 from '../../assets/images/git-icon.png';
 import htmlIcon from '../../assets/images/html5-icon.png';
 import javaIcon from '../../assets/images/java-icon.png';
 import javascriptIcon from '../../assets/images/javascript-icon.png';
-import mongoIcon from '../../assets/images/mongo-icon.png';
+import mongoIcon from '../../assets/images/mongodb-logo-icon.png';
+import mongooseIcon from '../../assets/images/mongo-icon.png';
 import mysqlIcon from '../../assets/images/mysql-icon.png';
 import nodeIcon from '../../assets/images/node-icon.png';
 import postgresqlIcon from '../../assets/images/postgresql-icon.png';
@@ -35,6 +36,7 @@ import railwayIcon from '../../assets/images/railway-icon.png';
 import reactIcon from '../../assets/images/react-icon.png';
 import sequelizeIcon from '../../assets/images/sequelize-icon.png';
 import slackIcon from '../../assets/images/slack.png';
+import sqliteIcon from '../../assets/images/sqlite-icon.png';
 import stripeIcon from '../../assets/images/stripe-icon.png';
 import trelloIcon from '../../assets/images/trello.png';
 import typescriptIcon from '../../assets/images/typescript-icon.png';
@@ -81,6 +83,7 @@ const styles = StyleSheet.create({
   },
   page: {
     padding: 25,
+    paddingTop: 20,
   },
   imageNameContainer: {
     display: 'flex',
@@ -107,7 +110,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    marginBottom: 5,
+    marginBottom: 3,
   },
   iconInfoContainer: {
     display: 'flex',
@@ -136,20 +139,20 @@ const styles = StyleSheet.create({
   },
   infoLanguage: {
     fontSize: 11.5,
-    marginBottom: 5,
+    marginBottom: 3,
   },
   skillsContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     position: 'relative',
-    marginBottom: 5,
+    marginBottom: 3,
   },
   iconInfoSkillsContainer: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    marginRight: 6,
-    marginBottom: 5,
+    marginRight: 10.5,
+    marginBottom: 3,
     width: '23%',
   },
   skillsInfoIcon: {
@@ -166,7 +169,7 @@ const styles = StyleSheet.create({
   projectsContainer: {
     minWidth: 520,
     maxWidth: 520,
-    marginBottom: 6,
+    marginBottom: 3,
   },
   experiencesContainer: {
     display: 'flex',
@@ -235,10 +238,8 @@ const styles = StyleSheet.create({
     minWidth: 520,
     maxWidth: 520,
     fontSize: 10.5,
-    marginBottom: 2,
   },
   description: {
-    marginBottom: 2,
     fontSize: 10.5,
   },
   gitHubUrlContainer: {
@@ -356,6 +357,14 @@ Además, adquirí experiencia en modelado de base de datos, autenticación de re
               title: 'Sequalize',
             },
             {
+              icon: mongooseIcon,
+              title: 'Mongoose',
+            },
+            {
+              icon: sqliteIcon,
+              title: 'SQLite',
+            },
+            {
               icon: expressIcon,
               title: 'Express',
             },
@@ -390,15 +399,15 @@ Además, adquirí experiencia en modelado de base de datos, autenticación de re
           info: [
             {
               icon: postgresqlIcon,
-              title: 'PostgreSQL: Medio',
+              title: 'PostgreSQL',
             },
             {
               icon: mysqlIcon,
-              title: 'MySQL: Medio',
+              title: 'MySQL',
             },
             {
               icon: mongoIcon,
-              title: 'MongoDB: Medio',
+              title: 'MongoDB',
             },
           ]
         },
@@ -445,7 +454,7 @@ Además, adquirí experiencia en modelado de base de datos, autenticación de re
           company: 'Henry Bootcamp',
           description: `Aplicación web de comercio electrónico de ropa con búsqueda integrada por categoría,filtros y opciones de ordenamiento, registro e inicio de sesión con Firebase con soporte para terceros,sistema de carrito y pagos con Stripe, visualización y creación de reseñas y funciones de administrador para reseñas, productos, usuarios y compras.`,
           gitHubUrl: 'https://github.com/GastonMonzon/ecommerce-ropa',
-          madeWithList: ['React', 'HTML', 'CSS', 'JavaScript', 'Node.js', 'MongoDb', 'Firebase', 'Stripe', 'Cloudinary', 'Railway', 'Vercel'],
+          madeWithList: ['React', 'HTML', 'CSS', 'JavaScript', 'Node.js', 'MongoDb', 'Mongoose', 'Firebase', 'Stripe', 'Cloudinary', 'Railway', 'Vercel'],
           madeWith: [
             reactIcon,
             htmlIcon,
@@ -453,6 +462,7 @@ Además, adquirí experiencia en modelado de base de datos, autenticación de re
             javascriptIcon,
             nodeIcon,
             mongoIcon,
+            mongooseIcon,
             firebaseIcon,
             stripeIcon,
             cloudinaryIcon,
@@ -468,7 +478,7 @@ Además, adquirí experiencia en modelado de base de datos, autenticación de re
           company: 'Henry Bootcamp',
           description: `Aplicación web que muestra información detallada sobre diversas razas de perros obtenidas de The Dog API, con la capacidad de buscar, ordenar y filtrar, elegir la cantidad de datos mostradas por página, opción de crear una nueva raza y cambiar fluidamente entre medidas métricas e imperiales.`,
           gitHubUrl: 'https://github.com/GastonMonzon/Dogs-API-web-app.git',
-          madeWithList: ['React', 'HTML', 'CSS', 'JavaScript', 'Node.js', 'PostgreSQL', 'Railway', 'Vercel'],
+          madeWithList: ['React', 'HTML', 'CSS', 'JavaScript', 'Node.js', 'PostgreSQL', 'Sequelize', 'Railway', 'Vercel'],
           madeWith: [
             reactIcon,
             htmlIcon,
@@ -476,6 +486,7 @@ Además, adquirí experiencia en modelado de base de datos, autenticación de re
             javascriptIcon,
             nodeIcon,
             postgresqlIcon,
+            sequelizeIcon,
             railwayIcon,
             vercelIcon,
           ],
@@ -488,7 +499,7 @@ Además, adquirí experiencia en modelado de base de datos, autenticación de re
           company: 'Henry Bootcamp',
           description: `Aplicación de escritorio diseñada para versiones modificadas del juego Forza Motorsport 4, con opciones para ver las especificaciones de cada vehículos, hacer búsquedas personalizadas con filtros y ordenamiento y reemplazar los motores de cualquier automóvil.`,
           gitHubUrl: 'https://github.com/GastonMonzon/forza-motorsport-4-engine-setter.git',
-          madeWithList: ['React', 'HTML', 'CSS', 'JavaScript', 'Node.js', 'MySQL', 'Railway', 'Vercel'],
+          madeWithList: ['React', 'HTML', 'CSS', 'JavaScript', 'Node.js', 'MySQL', 'SQLite', 'Railway', 'Vercel'],
           madeWith: [
             reactIcon,
             htmlIcon,
@@ -496,6 +507,7 @@ Además, adquirí experiencia en modelado de base de datos, autenticación de re
             javascriptIcon,
             nodeIcon,
             mysqlIcon,
+            sqliteIcon,
             railwayIcon,
             vercelIcon,
           ],
@@ -508,7 +520,7 @@ Además, adquirí experiencia en modelado de base de datos, autenticación de re
           company: 'Henry Bootcamp',
           description: `Aplicación web con Rick&Morty API con opciones para almacenamiento seguro de datos y autenticación, combinación fluida de búsqueda, filtrado y ordenación, decenas de opciones visuales de personalización, información detallada para cada personaje, amplia selección de fondos para cada página y carga y guardado automático o manual de opciones seleccionadas.`,
           gitHubUrl: 'https://github.com/GastonMonzon/rick_and_morty_full.git',
-          madeWithList: ['React', 'HTML', 'CSS', 'JavaScript', 'Node.js', 'PostgreSQL', 'Firebase', 'Firestore', 'Railway', 'Vercel'],
+          madeWithList: ['React', 'HTML', 'CSS', 'JavaScript', 'Node.js', 'PostgreSQL', 'Sequelize', 'Firebase', 'Firestore', 'Railway', 'Vercel'],
           madeWith: [
             reactIcon,
             htmlIcon,
@@ -516,6 +528,7 @@ Además, adquirí experiencia en modelado de base de datos, autenticación de re
             javascriptIcon,
             nodeIcon,
             postgresqlIcon,
+            sequelizeIcon,
             firebaseIcon,
             firestoreIcon,
             railwayIcon,
@@ -673,7 +686,7 @@ rascadores para gatos.`,
             isLong: true,
             logo: rgisIcon,
             title: 'Control de Inventario',
-            dates: 'dic. 2019 - mar. 2020',
+            dates: 'dic. 2019 - jul. 2020',
             company: 'RGIS',
             description: ``,
             // Control de stock manual con sistema propio en diversas empresas de consumo masivo, en góndola, exhibición y depósito.
