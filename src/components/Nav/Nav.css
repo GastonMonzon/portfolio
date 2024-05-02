@@ -7,9 +7,11 @@
   grid-template-columns: auto 1fr;
   padding: 10px 20px;
   z-index: 10;
+  font-family: inherit;
 }
 
 #nav h2 {
+  font-family: inherit;
 }
 
 .pcOnly {

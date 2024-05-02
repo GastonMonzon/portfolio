@@ -42,8 +42,8 @@ function App() {
       <Nav textContent={textContent} isEnglish={isEnglish} handleLanguageChange={handleLanguageChange} viewportWidth={viewportWidth} />
       <Headline textContent={textContent} viewportWidth={viewportWidth} />
       <About textContent={textContent} viewportWidth={viewportWidth} />
-      <Apps textContent={textContent} viewportWidth={viewportWidth} />
       <Skills textContent={textContent} viewportWidth={viewportWidth} />
+      <Apps textContent={textContent} viewportWidth={viewportWidth} />
       <Documents textContent={textContent} viewportWidth={viewportWidth} />
       <Contact textContent={textContent} viewportWidth={viewportWidth} />
       <Footer textContent={textContent} viewportWidth={viewportWidth} />
