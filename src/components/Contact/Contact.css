@@ -7,7 +7,8 @@
 }
 
 .contact-container a,
-.contact-container p {
+.contact-container p,
+.contact-container span {
   width: fit-content;
 }
 
@@ -35,7 +36,8 @@
   cursor: pointer;
 }
 
-.contact-text-copy p {
+.contact-text-copy p,
+.contact-text-copy span {
   width: fit-content;
   height: fit-content;
   background-color: black;
@@ -187,7 +189,8 @@ form {
 
 }
 
-.send-errors-container p {
+.send-errors-container p,
+.send-errors-container span {
   padding-right: 10px;
 }
 
@@ -268,7 +271,8 @@ label {
   color: rgb(0, 255, 0);
 }
 
-.modal p {
+.modal p,
+.modal span {
   padding: 0 10px;
 }
 

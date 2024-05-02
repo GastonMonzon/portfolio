@@ -1,6 +1,6 @@
 import './Documents.css';
 
-// import ReactPDF, { PDFViewer } from '@react-pdf/renderer';
+// import { PDFViewer } from '@react-pdf/renderer';
 // import PDF from './PDF';
 
 import cv from '../../assets/pdfs/Gaston Monzon CV.pdf';

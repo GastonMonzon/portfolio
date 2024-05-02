@@ -255,7 +255,7 @@ export default function Contact({ textContent }) {
             onMouseLeave={() => handleCopyTextReset('location')}
           >
             Capital Federal, Buenos Aires, Argentina
-            <p className='copy-modal' >{copyModal.location.text}</p>
+            <span className='copy-modal' >{copyModal.location.text}</span>
           </p>
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d210147.8514767034!2d-58.7286831392918!3d-34.61528163000272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca3d05457fbb%3A0xe160f4fce7f7c017!2sCdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1714128248338!5m2!1ses-419!2sar" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
           <h4>Email:</h4>
@@ -265,7 +265,7 @@ export default function Contact({ textContent }) {
             onMouseLeave={() => handleCopyTextReset('email')}
           >
             gastonmonzon3@gmail.com
-            <p className='copy-modal' >{copyModal.email.text}</p>
+            <span className='copy-modal' >{copyModal.email.text}</span>
           </p>
           <h4>{textContent.phoneNumber}</h4>
           <p
@@ -275,7 +275,7 @@ export default function Contact({ textContent }) {
           >
             <img src={argentinaIcon} alt='Argentina Icon' />
             +54 9 11 3144 9224
-            <p className='copy-modal' >{copyModal.phone.text}</p>
+            <span className='copy-modal' >{copyModal.phone.text}</span>
           </p>
           <div className='links-below-container' >
             <p>{textContent.linksBelow}</p>

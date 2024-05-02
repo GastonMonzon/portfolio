@@ -80,12 +80,12 @@ const styles = StyleSheet.create({
     fontFamily: 'Futura',
   },
   page: {
-    padding: 30,
+    padding: 25,
   },
   imageNameContainer: {
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center',
+    justifyContent: 'center',
   },
   image: {
     borderRadius: '100%',
@@ -95,46 +95,19 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 20,
     fontWeight: 'bold',
+    textAlign: 'center',
   },
   title: {
     fontSize: 16,
-    marginBottom: 4,
-  },
-  abstract: {
-    fontSize: 10,
-    textAlign: 'justify',
-    marginTop: 4,
-    marginBottom: 4,
-  },
-  subTitle: {
-    fontSize: 11,
-    marginBottom: 2,
+    marginBottom: 5,
+    textAlign: 'center',
   },
   infoContainer: {
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    fontSize: 9.5,
-  },
-  skillsContainer: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    position: 'relative',
-    marginBottom: 4,
-  },
-  iconInfoSkillsContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginRight: 6,
-    marginBottom: 4,
-    width: '23%',
-  },
-  gitHubUrlContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
+    marginBottom: 5,
   },
   iconInfoContainer: {
     display: 'flex',
@@ -147,6 +120,38 @@ const styles = StyleSheet.create({
     marginRight: 5,
     objectFit: 'contain',
   },
+  info: {
+    marginBottom: 5,
+    fontSize: 10.5,
+  },
+  abstract: {
+    fontSize: 11,
+    textAlign: 'justify',
+    marginTop: 5,
+    marginBottom: 5,
+  },
+  subTitle: {
+    fontSize: 12,
+    marginBottom: 3,
+  },
+  infoLanguage: {
+    fontSize: 11.5,
+    marginBottom: 5,
+  },
+  skillsContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    position: 'relative',
+    marginBottom: 5,
+  },
+  iconInfoSkillsContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginRight: 6,
+    marginBottom: 5,
+    width: '23%',
+  },
   skillsInfoIcon: {
     width: 20,
     height: 20,
@@ -154,25 +159,28 @@ const styles = StyleSheet.create({
     objectFit: 'contain',
   },
   skillsInfo: {
-    fontSize: 10,
+    fontSize: 10.5,
   },
-  info: {
-    marginBottom: 4,
-    fontSize: 10,
+  projectsMainContainer: {
+  },
+  projectsContainer: {
+    minWidth: 520,
+    maxWidth: 520,
+    marginBottom: 6,
   },
   experiencesContainer: {
     display: 'flex',
     flexDirection: 'row',
   },
   experienceContainer: {
-    minWidth: 255,
-    maxWidth: 255,
-    marginRight: 30,
+    minWidth: 265,
+    maxWidth: 265,
+    marginRight: 20,
   },
   mainTitleContainer: {
     display: 'flex',
     flexDirection: 'row',
-    marginBottom: 3,
+    marginBottom: 5,
   },
   mainTitleIcon: {
     width: 25,
@@ -180,24 +188,18 @@ const styles = StyleSheet.create({
     marginRight: 5,
   },
   mainTitle: {
-    fontSize: 13,
+    fontSize: 14,
   },
   line: {
   },
-  projectsMainContainer: {
-  },
-  projectsContainer: {
-    maxWidth: 500,
-    marginBottom: 4,
-  },
   jobsContainer: {
-    marginBottom: 2,
+    marginBottom: 5,
   },
   headlinesContainer: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 3,
+    marginBottom: 5,
   },
   logoTitleContainer: {
     display: 'flex',
@@ -221,17 +223,29 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
   jobTitle: {
-    fontSize: 10,
+    fontSize: 11,
   },
   company: {
-    fontSize: 10,
+    fontSize: 10.5,
   },
   dates: {
-    fontSize: 9.5,
+    fontSize: 10,
+  },
+  projectDescription: {
+    minWidth: 520,
+    maxWidth: 520,
+    fontSize: 10.5,
+    marginBottom: 2,
   },
   description: {
-    marginBottom: 1.5,
-    fontSize: 9.5,
+    marginBottom: 2,
+    fontSize: 10.5,
+  },
+  gitHubUrlContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 2,
   },
   appsContainer: {
     display: 'flex',
@@ -284,7 +298,11 @@ export default function PDF() {
         title: 'Sueldo bruto pretendido: $300.000 - $500.000',
       },
     ],
-    abstract: `A lo largo de mi carrera adquirí valiosas experiencias principalmente en atención al cliente y ventas minoristas que me ayudaron a pulir mis habilidades interpersonales y de comunicación. Actualmente, habiendome graduado de un bootcamp en Henry, me dediqué a perfeccionar mis conocimientos de programación en la creación de interfaces amigables para el usuario y proporcionar una amplia gama de opciones utilizando metodologías ágiles. Además, adquirí experiencia en modelado de base de datos, autenticación de registro e inicios de sesión, uso y creación de APIs, implementación de pasarela de pagos, despliegue en web y control de versiones.`,
+    abstract: `A lo largo de mi carrera adquirí valiosas experiencias principalmente en atención al cliente y ventas minoristas que me ayudaron a pulir mis habilidades interpersonales y de comunicación.
+
+Actualmente, habiendome graduado de un bootcamp en Henry, me dediqué a perfeccionar mis conocimientos de programación en la creación de interfaces amigables para el usuario y proporcionar una amplia gama de opciones utilizando metodologías ágiles.
+
+Además, adquirí experiencia en modelado de base de datos, autenticación de registro e inicios de sesión, uso y creación de APIs, implementación de pasarela de pagos, despliegue en web y control de versiones.`,
     skills: {
       mainTitleIcon: skillsIcon,
       mainTitle: 'Conocimientos y Habilidades',
@@ -427,6 +445,7 @@ export default function PDF() {
           company: 'Henry Bootcamp',
           description: `Aplicación web de comercio electrónico de ropa con búsqueda integrada por categoría,filtros y opciones de ordenamiento, registro e inicio de sesión con Firebase con soporte para terceros,sistema de carrito y pagos con Stripe, visualización y creación de reseñas y funciones de administrador para reseñas, productos, usuarios y compras.`,
           gitHubUrl: 'https://github.com/GastonMonzon/ecommerce-ropa',
+          madeWithList: ['React', 'HTML', 'CSS', 'JavaScript', 'Node.js', 'MongoDb', 'Firebase', 'Stripe', 'Cloudinary', 'Railway', 'Vercel'],
           madeWith: [
             reactIcon,
             htmlIcon,
@@ -449,6 +468,7 @@ export default function PDF() {
           company: 'Henry Bootcamp',
           description: `Aplicación web que muestra información detallada sobre diversas razas de perros obtenidas de The Dog API, con la capacidad de buscar, ordenar y filtrar, elegir la cantidad de datos mostradas por página, opción de crear una nueva raza y cambiar fluidamente entre medidas métricas e imperiales.`,
           gitHubUrl: 'https://github.com/GastonMonzon/Dogs-API-web-app.git',
+          madeWithList: ['React', 'HTML', 'CSS', 'JavaScript', 'Node.js', 'PostgreSQL', 'Railway', 'Vercel'],
           madeWith: [
             reactIcon,
             htmlIcon,
@@ -468,6 +488,7 @@ export default function PDF() {
           company: 'Henry Bootcamp',
           description: `Aplicación de escritorio diseñada para versiones modificadas del juego Forza Motorsport 4, con opciones para ver las especificaciones de cada vehículos, hacer búsquedas personalizadas con filtros y ordenamiento y reemplazar los motores de cualquier automóvil.`,
           gitHubUrl: 'https://github.com/GastonMonzon/forza-motorsport-4-engine-setter.git',
+          madeWithList: ['React', 'HTML', 'CSS', 'JavaScript', 'Node.js', 'MySQL', 'Railway', 'Vercel'],
           madeWith: [
             reactIcon,
             htmlIcon,
@@ -487,6 +508,7 @@ export default function PDF() {
           company: 'Henry Bootcamp',
           description: `Aplicación web con Rick&Morty API con opciones para almacenamiento seguro de datos y autenticación, combinación fluida de búsqueda, filtrado y ordenación, decenas de opciones visuales de personalización, información detallada para cada personaje, amplia selección de fondos para cada página y carga y guardado automático o manual de opciones seleccionadas.`,
           gitHubUrl: 'https://github.com/GastonMonzon/rick_and_morty_full.git',
+          madeWithList: ['React', 'HTML', 'CSS', 'JavaScript', 'Node.js', 'PostgreSQL', 'Firebase', 'Firestore', 'Railway', 'Vercel'],
           madeWith: [
             reactIcon,
             htmlIcon,
@@ -503,6 +525,88 @@ export default function PDF() {
       ]
     },
     experience: [
+      {
+        mainTitleIcon: educationIcon,
+        mainTitle: 'Educación',
+        info: [
+          {
+            isLong: true,
+            logo: henryIcon,
+            title: 'Desarrollador Full Stack',
+            dates: 'ago. 2023 - abr. 2024',
+            company: 'Henry - Graduado',
+            description: ``,
+          },
+          {
+            isLong: false,
+            logo: pluralsightIcon,
+            title: 'Curso Python Core',
+            dates: 'ene. 2023 - abr. 2023',
+            company: 'Pluralsight - Completado',
+            description: ``,
+          },
+          {
+            isLong: false,
+            logo: utnIcon,
+            title: `Ingeniería en Sistemas`,
+            dates: 'dic. 2018 - ene. 2021',
+            company: `UTN - 2° Año abandonado`,
+            description: ``,
+          },
+          {
+            isLong: false,
+            logo: jetbrainsIcon,
+            title: 'Curso Java Developer',
+            dates: 'dic. 2018 - ene. 2021',
+            company: `JetBrains Academy - 
+Completado`,
+            description: ``,
+          },
+          {
+            isLong: true,
+            logo: codecademyIcon,
+            title: 'Curso SQL Intermediate',
+            dates: 'feb. 2019 - abr. 2019',
+            company: 'Codecademy - Completado',
+            description: ``,
+          },
+          {
+            isLong: true,
+            logo: udemyIcon,
+            title: 'Curso SQL for Beginners',
+            dates: 'feb. 2019 - abr. 2019',
+            company: 'Udemy - Completado',
+            description: ``,
+          },
+          {
+            isLong: true,
+            logo: udemyIcon,
+            title: `Curso Java Masterclass`,
+            dates: 'ago. 2018 - ene. 2019',
+            company: 'Udemy - Completado',
+            description: ``,
+          },
+          {
+            isLong: true,
+            logo: udemyIcon,
+            title: `Curso Java Crash`,
+            dates: 'ago. 2018 - dic. 2018',
+            company: 'Udemy - Completado',
+            description: ``,
+          },
+          {
+            isLong: false,
+            logo: doverIcon,
+            title: `Bachiller en Humanidades 
+y Ciencias Sociales`,
+            dates: 'ene. 1996 - jul. 2011',
+            company: `Dover High School - 
+Primario y Secundario
+Completado`,
+            description: ``,
+          },
+        ],
+      },
       {
         mainTitleIcon: suitcaseIcon,
         mainTitle: 'Experiencia Laboral',
@@ -521,7 +625,7 @@ export default function PDF() {
             title: 'Fabricante',
             dates: 'abr. 2022 - actualidad',
             company: 'Rascadores Brunito',
-            description: `Proyecto tipo Startup de fabricación de
+            description: `Startup de fabricación de 
 rascadores para gatos.`,
             // Las tareas incluyen trabajo de carpintería como corte de maderas, atornillado, pegado y engrapado de alfombras y/o hilo sisal, y embalado de productos para su envío.
             // `,
@@ -639,89 +743,6 @@ rascadores para gatos.`,
           },
         ],
       },
-      {
-        mainTitleIcon: educationIcon,
-        mainTitle: 'Educación',
-        info: [
-          {
-            isLong: true,
-            logo: henryIcon,
-            title: 'Desarrollador Full Stack',
-            dates: 'ago. 2023 - abr. 2024',
-            company: 'Henry',
-            description: `Graduado`,
-          },
-          {
-            isLong: false,
-            logo: pluralsightIcon,
-            title: 'Curso Python Core Courses',
-            dates: 'ene. 2023 - abr. 2023',
-            company: 'Pluralsight',
-            description: `Completado`,
-          },
-          {
-            isLong: false,
-            logo: utnIcon,
-            title: `Ingeniería en Sistemas de 
-Información`,
-            dates: 'dic. 2018 - ene. 2021',
-            company: `Universidad Tecnológica 
-Nacional (UTN)`,
-            description: `2° Año abandonado`,
-          },
-          {
-            isLong: false,
-            logo: jetbrainsIcon,
-            title: 'Curso Java Developer',
-            dates: 'dic. 2018 - ene. 2021',
-            company: 'JetBrains Academy',
-            description: `Completado`,
-          },
-          {
-            isLong: true,
-            logo: codecademyIcon,
-            title: 'Curso SQL Intermediate',
-            dates: 'feb. 2019 - abr. 2019',
-            company: 'Codecademy',
-            description: `Completado`,
-          },
-          {
-            isLong: true,
-            logo: udemyIcon,
-            title: 'Curso SQL for Beginners',
-            dates: 'feb. 2019 - abr. 2019',
-            company: 'Udemy',
-            description: `Completado`,
-          },
-          {
-            isLong: true,
-            logo: udemyIcon,
-            title: `Curso Java Programming 
-Masterclass`,
-            dates: 'ago. 2018 - ene. 2019',
-            company: 'Udemy',
-            description: `Completado`,
-          },
-          {
-            isLong: true,
-            logo: udemyIcon,
-            title: `Learn Java Programming 
-Crash Course`,
-            dates: 'ago. 2018 - dic. 2018',
-            company: 'Udemy',
-            description: `Completado`,
-          },
-          {
-            isLong: false,
-            logo: doverIcon,
-            title: `Bachiller en Humanidades y
-Ciencias Sociales`,
-            dates: 'ene. 1996 - jul. 2011',
-            company: 'Dover High School',
-            description: `Primario y Secundario Completado`,
-          },
-        ],
-      }
     ],
     other: {
       mainTitleIcon: educationIcon,
@@ -739,7 +760,7 @@ Ciencias Sociales`,
     <Document style={styles.main} >
       <Page size='A4' style={styles.page}>
         <View style={styles.imageNameContainer} >
-          <Image style={styles.image} src={cvImage} />
+          {/* <Image style={styles.image} src={cvImage} /> */}
           <Text style={styles.name} >Gaston Exequiel Monzon</Text>
         </View>
         <Text style={styles.title} >Desarrollador Full Stack Junior Javascript | Node JS | HTML | CSS | SQL</Text>
@@ -751,7 +772,7 @@ Ciencias Sociales`,
             </View>
           ))}
         </View>
-        <Svg width={520} height={2} >
+        <Svg width={550} height={2} >
           <Line
             x1='0'
             y1='0'
@@ -791,9 +812,9 @@ Ciencias Sociales`,
             </View>
           </React.Fragment>
         ))}
-        <Text style={styles.subTitle} >Idiomas</Text>
-        <Text style={styles.info} >Inglés: Avanzado</Text>
-        <Text style={styles.info} >EF SET Certificate En Inglés C2 Proficient</Text>
+        <Text style={styles.subTitle} >Idiomas:</Text>
+        <Text style={styles.infoLanguage} >Inglés: Avanzado</Text>
+        <Text style={styles.infoLanguage} >EF SET Certificate En Inglés C2 Proficient</Text>
         <View style={styles.projectsMainContainer} >
           <View style={styles.mainTitleContainer} >
             <Image style={styles.mainTitleIcon} src={textData.projects.mainTitleIcon} />
@@ -820,13 +841,13 @@ Ciencias Sociales`,
                   }
                   <View style={styles.titleCompanyContainer}>
                     <Text style={styles.subTitle}>{project.title}</Text>
-                    <Text style={styles.description}>{project.description}</Text>
+                    <Text style={styles.projectDescription}>{project.description}</Text>
                     <View style={styles.gitHubUrlContainer} >
                       <Image style={styles.skillsInfoIcon} src={gitIcon} />
                       <Text style={styles.skillsInfo}>{project.gitHubUrl}</Text>
                     </View>
                     <View style={styles.appsContainer} >
-                      <Text style={styles.jobTitle} >Desarrollado Con: </Text>
+                      <Text style={styles.jobTitle} >Desarrollado Con: {/* {project.madeWithList.join(', ')} */}</Text>
                       {project.madeWith.map((app, index) => (
                         <View key={`app-${index}`}>
                           <Image style={styles.skillsInfoIcon} src={app} />
@@ -856,7 +877,7 @@ Ciencias Sociales`,
                       x2='100%'
                       y2='0'
                       strokeWidth={5}
-                      stroke={index === 0 ? 'rgb(39, 39, 60)' : 'yellow'}
+                      stroke={index === 0 ? 'orange' : 'rgb(39, 39, 60)'}
                     />
                   </Svg>
                 </View>
