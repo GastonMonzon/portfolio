@@ -13,8 +13,8 @@ export default function Nav({ textContent, isEnglish, handleLanguageChange, view
   const navButtons = [
     { id: 1, name: textContent.homeButton, href: '#headline', isScrolled: isScrollHome },
     { id: 2, name: textContent.aboutButton, href: '#about', isScrolled: isScrollAbout },
-    { id: 3, name: textContent.portfolioButton, href: '#portfolio', isScrolled: isScrollPortfolio },
-    { id: 4, name: textContent.skillsButton, href: '#skills', isScrolled: isScrollSkills },
+    { id: 3, name: textContent.skillsButton, href: '#skills', isScrolled: isScrollSkills },
+    { id: 4, name: textContent.portfolioButton, href: '#portfolio', isScrolled: isScrollPortfolio },
     { id: 5, name: textContent.documentsButton, href: '#documents', isScrolled: isScrollDocuments },
     { id: 6, name: textContent.contactButton, href: '#contact', isScrolled: isScrollContact },
   ];
