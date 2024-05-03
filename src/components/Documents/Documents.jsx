@@ -4,12 +4,13 @@ import './Documents.css';
 // import PDF from './PDF';
 
 import cv from '../../assets/pdfs/Gaston Monzon CV.pdf';
+import cvEn from '../../assets/pdfs/Gaston Monzon CV English.pdf';
 import efSet from '../../assets/pdfs/EF SET Certificate.pdf';
 import aprobado from '../../assets/pdfs/Certificado Aprobacion Henry Bootcamp.pdf';
 import scrum from '../../assets/images/Certificado TSoft Agilidad-Introducción Scrum.png';
 import { useState } from 'react';
 
-export default function Documents({ textContent }) {
+export default function Documents({ isEnglish, textContent }) {
 
   const [iframeIndex, setIframeIndex] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -55,8 +56,8 @@ export default function Documents({ textContent }) {
         />
         <iframe
           className='document'
-          title='Gaston Monzon CV'
-          src={cv}
+          title={isEnglish ? 'Gaston Monzon CV English' : 'Gaston Monzon CV Español'}
+          src={isEnglish ? cvEn : cv}
           style={getIframeStyle(iframeIndex)}
         />
         <iframe

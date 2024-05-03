@@ -7,8 +7,8 @@ import whatsappNameIcon from '../../assets/icons/whatsapp-name-icon.svg';
 import whatsappIcon from '../../assets/icons/whatsapp-app-icon.svg';
 import telegramIcon from '../../assets/icons/telegram-icon.svg';
 import cv from '../../assets/pdfs/Gaston Monzon CV.pdf';
-import cvIcon2 from '../../assets/icons/cv-icon2.svg';
-import cvIcon3 from '../../assets/icons/cv-icon3.svg';
+import cvEn from '../../assets/pdfs/Gaston Monzon CV English.pdf';
+import cvIcon from '../../assets/icons/cv-icon3.svg';
 import { useEffect, useState } from 'react';
 
 export default function Footer() {
@@ -63,10 +63,18 @@ export default function Footer() {
       </a>
       <a className='cv-link-contianer' href={cv} rel='noreferrer' target='_blank' >
         <button className='cv-link-button' >
-          CV
+          CV Español
         </button>
         <button className='cv-link-icon' >
-          <img src={cvIcon3} alt='Github link' />
+          <img src={cvIcon} alt='CV Link Spanish' />
+        </button>
+      </a>
+      <a className='cv-link-contianer' href={cvEn} rel='noreferrer' target='_blank' >
+        <button className='cv-link-button' >
+          CV English
+        </button>
+        <button className='cv-link-icon' >
+          <img src={cvIcon} alt='CV Link English' />
         </button>
       </a>
     </footer>

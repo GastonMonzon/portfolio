@@ -1,75 +1,69 @@
 import { Document, StyleSheet, Page, View, Text, Image, Font, Line, Svg } from '@react-pdf/renderer';
 import cvImage from '../../assets/images/cvImage.jpg';
 
-
-import idIcon from '../../assets/images/id.png';
-import moneyIcon from '../../assets/images/financial.png';
+import gitHubIcon from '../../assets/images/github.jpg';
 import heartIcon from '../../assets/images/heart.png';
-import locationIcon from '../../assets/images/map.png';
-import gitIcon from '../../assets/images/github.png';
-import mailIcon from '../../assets/images/gmail.png';
-import phoneIcon from '../../assets/images/phone-call.png';
-import webIcon from '../../assets/images/website.png';
-import FM4Icon from '../../assets/images/FM4-image.png';
-import ecommerceIcon from '../../assets/icons/ecommerce-logo.png';
-import dogsIcon from '../../assets/images/dogs-icon.png';
-import rickAndMortyIcon from '../../assets/images/rick_and_morty_title.png';
+import idIcon from '../../assets/images/id.jpg';
+import linkedinIcon from '../../assets/images/linkedin.jpg';
+import locationIcon from '../../assets/images/map.jpg';
+import mailIcon from '../../assets/images/gmail.jpg';
+import moneyIcon from '../../assets/images/financial.jpg';
+import phoneIcon from '../../assets/images/phone-call.jpg';
+import webIcon from '../../assets/images/website.jpg';
 
-import cloudinaryIcon from '../../assets/images/cloudinary-icon.png';
-import cPlusPlusIcon from '../../assets/images/c++-icon.png';
-import cssIcon from '../../assets/images/css3-icon.png';
-import databaseIcon from '../../assets/images/database-icon.png';
+import educationIcon from '../../assets/images/education.png';
+import projectsIcon from '../../assets/images/coding.jpg';
+import skillsIcon from '../../assets/images/coding-book.png';
+import suitcaseIcon from '../../assets/images/suitcase.jpg';
+
+import cloudinaryIcon from '../../assets/images/cloudinary-icon.jpg';
+import cPlusPlusIcon from '../../assets/images/c++-icon.jpg';
+import cssIcon from '../../assets/images/css3-icon.jpg';
+import databaseIcon from '../../assets/images/database-icon.jpg';
 import expressIcon from '../../assets/images/express-icon.png';
-import firebaseIcon from '../../assets/images/firebase-icon.png';
-import firestoreIcon from '../../assets/images/firestore-icon.png';
-import gitIcon2 from '../../assets/images/git-icon.png';
-import htmlIcon from '../../assets/images/html5-icon.png';
-import javaIcon from '../../assets/images/java-icon.png';
-import javascriptIcon from '../../assets/images/javascript-icon.png';
-import mongoIcon from '../../assets/images/mongodb-logo-icon.png';
-import mongooseIcon from '../../assets/images/mongo-icon.png';
-import mysqlIcon from '../../assets/images/mysql-icon.png';
-import nodeIcon from '../../assets/images/node-icon.png';
-import postgresqlIcon from '../../assets/images/postgresql-icon.png';
+import firebaseIcon from '../../assets/images/firebase-icon.jpg';
+import firestoreIcon from '../../assets/images/firestore-icon.jpg';
+import gitIcon from '../../assets/images/git-icon.png';
+import htmlIcon from '../../assets/images/html5-icon.jpg';
+import javaIcon from '../../assets/images/java-icon.jpg';
+import javascriptIcon from '../../assets/images/javascript-icon.jpg';
+import mongoIcon from '../../assets/images/mongodb-logo-icon.jpg';
+import mongooseIcon from '../../assets/images/mongo-icon.jpg';
+import mysqlIcon from '../../assets/images/mysql-icon.jpg';
+import nodeIcon from '../../assets/images/node-icon.jpg';
+import postgresqlIcon from '../../assets/images/postgresql-icon.jpg';
 import pythonIcon from '../../assets/images/python-icon.png';
 import railwayIcon from '../../assets/images/railway-icon.png';
-import reactIcon from '../../assets/images/react-icon.png';
-import sequelizeIcon from '../../assets/images/sequelize-icon.png';
+import reactIcon from '../../assets/images/react-icon.jpg';
+import sequelizeIcon from '../../assets/images/sequelize-icon.jpg';
 import slackIcon from '../../assets/images/slack.png';
 import sqliteIcon from '../../assets/images/sqlite-icon.png';
 import stripeIcon from '../../assets/images/stripe-icon.png';
 import trelloIcon from '../../assets/images/trello.png';
 import typescriptIcon from '../../assets/images/typescript-icon.png';
 import vercelIcon from '../../assets/images/vercel-icon.png';
-import officeIcon from '../../assets/images/office.png';
+import officeIcon from '../../assets/images/office.jpg';
 
-// import moneyIcon from '../../assets/images/money-icon.png';
-// import mailIcon from '../../assets/images/mail-icon.png';
-// import idIcon from '../../assets/images/id-icon.png';
-// import locationIcon from '../../assets/images/location-icon.png';
-// import heartIcon from '../../assets/images/heart-icon.png';
-// import phoneIcon from '../../assets/images/phone-icon.png';
-// import gitIcon from '../../assets/images/github-icon.png';
-// import webIcon from '../../assets/images/web-icon.png';
+import FM4Icon from '../../assets/images/FM4-image.jpg';
+import ecommerceIcon from '../../assets/icons/ecommerce-logo.png';
+import dogsIcon from '../../assets/images/dogs-icon.jpg';
+import rickAndMortyIcon from '../../assets/images/rick_and_morty_title.jpg';
 
-import educationIcon from '../../assets/images/education.png';
-import suitcaseIcon from '../../assets/images/suitcase.png';
-import projectsIcon from '../../assets/images/coding.png';
-import skillsIcon from '../../assets/images/coding-book.png';
 import codecademyIcon from '../../assets/images/codecademy-icon.png';
-import doverIcon from '../../assets/images/dover-icon.png';
-import entheusIcon from '../../assets/images/entheus-icon.png';
+import doverIcon from '../../assets/images/dover-icon.jpg';
+import entheusIcon from '../../assets/images/entheus-icon.jpg';
 import farmacityIcon from '../../assets/images/farmacity-icon.png';
-import ferreroIcon from '../../assets/images/ferrero-icon.png';
-import googleIcon from '../../assets/images/google-icon.png';
+import ferreroIcon from '../../assets/images/ferrero-icon.jpg';
+import googleIcon from '../../assets/images/google-icon.jpg';
 import henryIcon from '../../assets/images/henry-icon.png';
 import jetbrainsIcon from '../../assets/images/jetbrains-icon.png';
 import pluralsightIcon from '../../assets/images/pluralsight-icon.png';
 import rgisIcon from '../../assets/images/rgis-icon.png';
 import secutecIcon from '../../assets/images/secutec-icon.png';
 import udemyIcon from '../../assets/images/udemy-icon.png';
-import utnIcon from '../../assets/images/utn-icon.png';
+import utnIcon from '../../assets/images/utn-icon.jpg';
 import xappiaIcon from '../../assets/images/xappia-icon.png';
+
 import React from 'react';
 
 Font.register({
@@ -83,7 +77,7 @@ const styles = StyleSheet.create({
   },
   page: {
     padding: 25,
-    paddingTop: 20,
+    paddingTop: 18,
   },
   imageNameContainer: {
     display: 'flex',
@@ -96,13 +90,13 @@ const styles = StyleSheet.create({
     marginRight: 5,
   },
   name: {
-    fontSize: 20,
+    fontSize: 19,
     fontWeight: 'bold',
     textAlign: 'center',
   },
   title: {
-    fontSize: 16,
-    marginBottom: 5,
+    fontSize: 17,
+    marginBottom: 3,
     textAlign: 'center',
   },
   infoContainer: {
@@ -115,23 +109,23 @@ const styles = StyleSheet.create({
   iconInfoContainer: {
     display: 'flex',
     flexDirection: 'row',
-    marginRight: 5,
+    marginRight: 3,
   },
   infoIcon: {
     width: 12,
     height: 12,
-    marginRight: 5,
+    marginRight: 3,
     objectFit: 'contain',
   },
   info: {
-    marginBottom: 5,
-    fontSize: 10.5,
+    marginBottom: 3,
+    fontSize: 10,
   },
   abstract: {
     fontSize: 11,
     textAlign: 'justify',
-    marginTop: 5,
-    marginBottom: 5,
+    marginTop: 4,
+    marginBottom: 4,
   },
   subTitle: {
     fontSize: 12,
@@ -264,7 +258,11 @@ const styles = StyleSheet.create({
 });
 
 export default function PDF() {
-  const textData = {
+
+  const isEnglish = false;
+
+  const textData = isEnglish ? {
+    mainTitle: 'Full Stack Junior Developer React | Javascript | Node JS | HTML | CSS | SQL',
     contactInfo: [
       {
         icon: phoneIcon,
@@ -275,11 +273,528 @@ export default function PDF() {
         title: 'gastonmonzon3@gmail.com',
       },
       {
+        icon: linkedinIcon,
+        title: 'www.linkedin.com/in/gaston-monzon',
+      },
+      {
+        icon: webIcon,
+        title: 'Web Portfolio: https://gaston-monzon-portfolio.vercel.app/',
+      },
+      {
+        icon: gitHubIcon,
+        title: 'Git User: GastonMonzon',
+      },
+      {
+        icon: locationIcon,
+        title: 'Blanco Encalada 4680 4 B Capital Federal, Buenos Aires, Argentina',
+      },
+      {
+        icon: heartIcon,
+        title: '21/11/1992 , Single',
+      },
+      {
+        icon: idIcon,
+        title: 'DNI: 37246155',
+      },
+      {
+        icon: moneyIcon,
+        title: 'Intended gross salary: US$150 - US$300',
+      },
+    ],
+    abstract: `Throughout my career I've acquired valuable experiences primarily in customer service and retail sales that helped me polish my interpersonal and comunication skills.
+
+Currently, having graduated from a bootcamp at Henry, i've dedicated to perfecting my knowledge in programming on creating user-friendly interfaces and providing a wide range of user options using agile methodologies.
+
+Additionally, I gained experience in database modeling, register and login authentication, use and creation of APIs, payment gateway implementation, web deployment and version control.`,
+    skills: {
+      mainTitleIcon: skillsIcon,
+      mainTitle: 'Skills And Knowledge',
+      type: [
+        {
+          title: 'Programming Languages:',
+          info: [
+            {
+              icon: reactIcon,
+              title: 'React: Advanced',
+            },
+            {
+              icon: javascriptIcon,
+              title: 'Javascript: Advanced',
+            },
+            {
+              icon: typescriptIcon,
+              title: 'TypeScript: Basic',
+            },
+            {
+              icon: htmlIcon,
+              title: 'HTML: Advanced',
+            },
+            {
+              icon: cssIcon,
+              title: 'CSS: Advanced',
+            },
+            {
+              icon: pythonIcon,
+              title: 'Python: Basic',
+            },
+            {
+              icon: javaIcon,
+              title: 'Java: Basic',
+            },
+            {
+              icon: cPlusPlusIcon,
+              title: 'C++: Basic',
+            },
+            {
+              icon: databaseIcon,
+              title: 'SQL: Advanced',
+            },
+          ]
+        },
+        {
+          title: 'Frameworks:',
+          info: [
+            {
+              icon: sequelizeIcon,
+              title: 'Sequalize',
+            },
+            {
+              icon: mongooseIcon,
+              title: 'Mongoose',
+            },
+            {
+              icon: sqliteIcon,
+              title: 'SQLite',
+            },
+            {
+              icon: expressIcon,
+              title: 'Express',
+            },
+            {
+              icon: cloudinaryIcon,
+              title: 'Cloudinary',
+            },
+            {
+              icon: stripeIcon,
+              title: 'Stripe',
+            },
+            {
+              icon: firebaseIcon,
+              title: 'Firebase',
+            },
+            {
+              icon: firestoreIcon,
+              title: 'Firestore',
+            },
+            {
+              icon: railwayIcon,
+              title: 'Railway',
+            },
+            {
+              icon: vercelIcon,
+              title: 'Vercel',
+            },
+          ]
+        },
+        {
+          title: 'Database:',
+          info: [
+            {
+              icon: postgresqlIcon,
+              title: 'PostgreSQL',
+            },
+            {
+              icon: mysqlIcon,
+              title: 'MySQL',
+            },
+            {
+              icon: mongoIcon,
+              title: 'MongoDB',
+            },
+          ]
+        },
+        {
+          title: 'Herramientas: ',
+          info: [
+            {
+              icon: nodeIcon,
+              title: 'Node.js',
+            },
+            {
+              icon: gitHubIcon,
+              title: 'Github',
+            },
+            {
+              icon: gitIcon,
+              title: 'Git: Advanced',
+            },
+            {
+              icon: slackIcon,
+              title: 'Slack',
+            },
+            {
+              icon: trelloIcon,
+              title: 'Trello',
+            },
+            {
+              icon: officeIcon,
+              title: 'Office: Advanced',
+            },
+          ]
+        },
+      ],
+    },
+    languagesTitle: 'Languages',
+    spanish: 'Spanish: Native',
+    english: 'English: Advanced',
+    englishCertificate: 'EF SET Certifcate In English C2 Proficient',
+    projects: {
+      mainTitleIcon: projectsIcon,
+      mainTitle: 'Project',
+      info: [
+        {
+          isLong: false,
+          logo: ecommerceIcon,
+          title: 'E-commerce Tienda De Ropa',
+          dates: 'feb. 2024 - apr. 2024',
+          company: 'Henry Bootcamp',
+          description: `Clothes e-commerce web app with built-in category search, filters and sortings, secure user register and login on Firebase with third-party login support, cart system and payments with Stripe, reviews viewing and creation and admin functions for reviews, products, users and purchases.`,
+          gitHubUrl: 'https://github.com/GastonMonzon/ecommerce-ropa',
+          madeWithList: ['React', 'HTML', 'CSS', 'JavaScript', 'Node.js', 'MongoDb', 'Mongoose', 'Firebase', 'Stripe', 'Cloudinary', 'Railway', 'Vercel'],
+          madeWith: [
+            reactIcon,
+            htmlIcon,
+            cssIcon,
+            javascriptIcon,
+            nodeIcon,
+            mongoIcon,
+            mongooseIcon,
+            firebaseIcon,
+            stripeIcon,
+            cloudinaryIcon,
+            railwayIcon,
+            vercelIcon,
+          ],
+        },
+        {
+          isLong: true,
+          logo: dogsIcon,
+          title: 'Dogs API Web Page',
+          dates: 'dec. 2023 - dec. 2023',
+          company: 'Henry Bootcamp',
+          description: `Web application that displays detailed information about various dog breeds obtained from The Dog API, with the ability to search, sort and filter, choose the amount of data displayed per page, option to create a new breed and seamlessly switch between metric and imperial measurements.`,
+          gitHubUrl: 'https://github.com/GastonMonzon/Dogs-API-web-app.git',
+          madeWithList: ['React', 'HTML', 'CSS', 'JavaScript', 'Node.js', 'PostgreSQL', 'Sequelize', 'Railway', 'Vercel'],
+          madeWith: [
+            reactIcon,
+            htmlIcon,
+            cssIcon,
+            javascriptIcon,
+            nodeIcon,
+            postgresqlIcon,
+            sequelizeIcon,
+            railwayIcon,
+            vercelIcon,
+          ],
+        },
+        {
+          isLong: true,
+          logo: FM4Icon,
+          title: 'Forza Motorsport 4 Engine Setter',
+          dates: 'dec. 2023 - dec. 2023',
+          company: 'Henry Bootcamp',
+          description: `Desktop application designed for modified versions of the Forza Motorsport 4 game, with options to view each vehicle's specifications, do custom searches with filters and sorting, and replace the engines of any car.`,
+          gitHubUrl: 'https://github.com/GastonMonzon/forza-motorsport-4-engine-setter.git',
+          madeWithList: ['React', 'HTML', 'CSS', 'JavaScript', 'Node.js', 'MySQL', 'SQLite', 'Railway', 'Vercel'],
+          madeWith: [
+            reactIcon,
+            htmlIcon,
+            cssIcon,
+            javascriptIcon,
+            nodeIcon,
+            mysqlIcon,
+            sqliteIcon,
+            railwayIcon,
+            vercelIcon,
+          ],
+        },
+        {
+          isLong: true,
+          logo: rickAndMortyIcon,
+          title: 'Rick And Morty',
+          dates: 'sept. 2023 - nov. 2023',
+          company: 'Henry Bootcamp',
+          description: `Web application with Rick&Morty API with options for secure data storage and authentication, seamless combination of searching, filtering and sorting, dozens of visual customization options, detailed information for each character, wide selection of backgrounds for each page and loading and auto or manual saving of selected options.`,
+          gitHubUrl: 'https://github.com/GastonMonzon/rick_and_morty_full.git',
+          madeWithList: ['React', 'HTML', 'CSS', 'JavaScript', 'Node.js', 'PostgreSQL', 'Sequelize', 'Firebase', 'Firestore', 'Railway', 'Vercel'],
+          madeWith: [
+            reactIcon,
+            htmlIcon,
+            cssIcon,
+            javascriptIcon,
+            nodeIcon,
+            postgresqlIcon,
+            sequelizeIcon,
+            firebaseIcon,
+            firestoreIcon,
+            railwayIcon,
+            vercelIcon,
+          ],
+        },
+      ],
+      developedWith: 'Developed With: ',
+    },
+    experience: [
+      {
+        mainTitleIcon: educationIcon,
+        mainTitle: 'Education',
+        info: [
+          {
+            isLong: true,
+            logo: henryIcon,
+            title: 'Full Stack Developer',
+            dates: 'aug. 2023 - apr. 2024',
+            company: 'Henry - Graduated',
+            description: ``,
+          },
+          {
+            isLong: false,
+            logo: pluralsightIcon,
+            title: 'Python Core Course',
+            dates: 'jan. 2023 - apr. 2023',
+            company: 'Pluralsight - Completed',
+            description: ``,
+          },
+          {
+            isLong: false,
+            logo: utnIcon,
+            title: `Systems Engineering`,
+            dates: 'dec. 2018 - jan. 2021',
+            company: `UTN - 2° Year abandoned`,
+            description: ``,
+          },
+          {
+            isLong: false,
+            logo: jetbrainsIcon,
+            title: 'Java Developer Course',
+            dates: 'dec. 2018 - jan. 2021',
+            company: `JetBrains Academy - 
+Completed`,
+            description: ``,
+          },
+          {
+            isLong: true,
+            logo: codecademyIcon,
+            title: 'SQL Intermediate Course',
+            dates: 'feb. 2019 - apr. 2019',
+            company: 'Codecademy - Completed',
+            description: ``,
+          },
+          {
+            isLong: true,
+            logo: udemyIcon,
+            title: 'SQL for Beginners Course',
+            dates: 'feb. 2019 - apr. 2019',
+            company: 'Udemy - Completed',
+            description: ``,
+          },
+          {
+            isLong: true,
+            logo: udemyIcon,
+            title: `Java Masterclass Course`,
+            dates: 'aug. 2018 - jan. 2019',
+            company: 'Udemy - Completed',
+            description: ``,
+          },
+          {
+            isLong: true,
+            logo: udemyIcon,
+            title: `Java Crash Course`,
+            dates: 'aug. 2018 - dec. 2018',
+            company: 'Udemy - Completed',
+            description: ``,
+          },
+          {
+            isLong: false,
+            logo: doverIcon,
+            title: `Bachelor of Humanities
+and Social Sciences`,
+            dates: 'jan. 1996 - jul. 2011',
+            company: `Dover High School - 
+Elementary and Secondary
+Completed`,
+            description: ``,
+          },
+        ],
+      },
+      {
+        mainTitleIcon: suitcaseIcon,
+        mainTitle: 'Work Experience',
+        info: [
+          // {
+          //   isLong: true,
+          //   logo: henryIcon,
+          //   title: 'Estudiante Graduado',
+          //   dates: 'aug.2023 - actualidad',
+          //   company: 'Henry',
+          //   description: 'Bootcamp especializado de 4 a 6 meses diseñado para enseñar la creación de aplicaciones web de una sola página utilizando React, junto con modelado de base de datos, autenticación de registro e inicios de sesión, uso y creación de APIs, implementación de pasarela de pagos y deploy en web de la aplicación. Utilizando y aprendiendo Javascript, CSS, HTML, SQL y demás frameworks como Firebase, Cloudinary, Stripe, Railway y Vercel entre otros.',
+          // },
+          {
+            isLong: false,
+            logo: null,
+            title: 'Manufacturer',
+            dates: 'apr. 2022 - current',
+            company: 'Rascadores Brunito',
+            description: `Cat scratchers manufacturing startup.`,
+            // Las tareas incluyen trabajo de carpintería como corte de maderas, atornillado, pegado y engrapado de alfombras y/o hilo sisal, y embalado de productos para su envío.
+            // `,
+          },
+          {
+            isLong: true,
+            logo: secutecIcon,
+            title: 'Security Guard',
+            dates: 'dec. 2020 - mar. 2022',
+            company: 'Secutec Securite S.A.',
+            description: ``,
+            // \u25CF Control de ingreso y egreso de personas.
+            // \u2022 Monitoreo de cámaras.
+            // \u2022 Llenado de libro de actas.
+            // \u2022 Chequeo perimetral.
+            // \u2022 Jornada laboral de 12 horas turno noche, modalidad 6 x 2.
+            // Referencia: Luis Gianetto, Supervisor. Tel: 11 2461 1785
+            // `,
+          },
+          {
+            isLong: true,
+            logo: xappiaIcon,
+            title: 'System Analist',
+            dates: 'jul. 2020 - sept. 2020',
+            company: 'Xappia S.R.L.',
+            description: ``,
+            // Trabajo remoto. Recepción de actualizaciones de sistemas con el fin de verificar los cambios realizados y, de ser necesario, corregir los errores que hubieran utilizando herramientas de programación (Ruby, Java, archivos XML). Jornada laboral tiempo completo regular.
+            // `,
+          },
+          {
+            isLong: false,
+            logo: googleIcon,
+            title: 'StreetView Driver',
+            dates: 'mar. 2020 - sept. 2020',
+            company: 'Google',
+            description: ``,
+            // 🔶 Conducción de un vehículo SUV con sistema de cámaras para registrar los alrededores en rutas dadas de CABA y barrios cercanos.
+            // 🔶 Manejo de una computadora a bordo para el control y mantenimiento de las cámaras y sistemas
+            // 🔶 Reportes diarios del progreso efectuado.
+            // 🔶 Cuidado y mantención del vehículo.
+            // 🔶 Jornada laboral tiempo completo regular.
+            // `,
+          },
+          {
+            isLong: true,
+            logo: rgisIcon,
+            title: 'Inventory Controller',
+            dates: 'dec. 2019 - jul. 2020',
+            company: 'RGIS',
+            description: ``,
+            // Control de stock manual con sistema propio en diversas empresas de consumo masivo, en góndola, exhibición y depósito.
+            // Jornada laboral flexible (mayoritariamente turno noche), priorizando los días y horarios de los clientes.
+            // Referencia: Cecilia Lezcano, Bayton RRHH. Tel: 11 6716 3271
+            // `,
+          },
+          {
+            isLong: true,
+            logo: entheusIcon,
+            title: 'Security Guard',
+            dates: 'aug. 2017 - nov. 2018',
+            company: 'Entheus S.R.L.',
+            description: ``,
+            // 🔷 Control del ingreso y egreso de personal de la empresa asegurada, proveedores y personas.
+            // 🔷 Mantener el orden, prevenir infracciones y notificar de estas a las empresas.
+            // 🔷 Llenado de libro de actas.
+            // 🔷 Monitoreo por medio de cámaras.
+            // 🔷 Chequeo perimetral.
+            // 🔷 Jornada laboral de 12 horas turno noche, 2 francos cada 6 trabajados.
+            // Referencia: Florencia Cosimo, RRHH. Tel: 11 4957 6000`,
+            // `,
+          },
+          {
+            isLong: true,
+            logo: farmacityIcon,
+            title: 'Multipurpose Employee',
+            dates: 'may. 2016 - aug. 2016',
+            company: 'Farmacity S.A.',
+            description: ``,
+            // ◽ Atención al cliente.
+            // ◽ Manejo de caja con sistema de cobro propio y sistema Posnet.
+            // ◽ Control de ticket fiscal.
+            // ◽ Limpieza y orden general del local.
+            // ◽ Reposición de mercadería en góndola, línea de cajas y depósito.
+            // ◽ Control de stock con sistema propio y carga y descarga de mercadería.
+            // ◽ Jornada laboral con turnos rotativos, modalidad 6 x 1.
+            // `,
+          },
+          {
+            isLong: false,
+            logo: ferreroIcon,
+            title: 'External Shelf Stocker',
+            dates: 'mar. 2015 - jun. 2015',
+            company: 'Ferrero Argentina S.A.',
+            description: ``,
+            // 🔘 Reposición de todos los productos de marca Ferrero en 3 supermercados por día.
+            // 🔘 Limpieza y orden general de góndolas y stands de mercadería.
+            // 🔘 Chequeo de stock en depósito y pedido de mercadería faltante.
+            // 🔘 Jornada laboral de lunes a viernes de 6 a 14 hs. Sábados de 8 a 12 hs.
+            // Referencia: Paula Fuchs, Solvens RRHH. Tel: 11 5488 9659
+            // `,
+          },
+          {
+            isLong: false,
+            logo: null,
+            title: 'Retail Store Clerk',
+            dates: 'mar. 2012 - dec. 2015',
+            company: 'Mundo Service S.R.L.',
+            description: ``,
+            // ◼️ Atención al cliente y venta de herramientas de ferretería.
+            // ◼️ Reposición y orden y limpieza general del local.
+            // ◼️ Recepción de electrodomésticos a reparar o retirar.
+            // ◼️ Jornada laboral tiempo completo regular.
+            // Referencia: Miguel Feijoo, Dueño. Tel: 0322 4749 0997
+            // `,
+          },
+        ],
+      },
+    ],
+    other: {
+      mainTitleIcon: educationIcon,
+      mainTitle: 'Other Skills',
+      info: [
+        'First Certificate in English (FCE)',
+        'International Certificate of Secundary Education (ICE)',
+        'Driver\'s license',
+        'Glider Pilot License',
+      ]
+    },
+    page: 'of',
+  } : {
+    mainTitle: 'Desarrollador Full Stack Junior React | Javascript | Node JS | HTML | CSS | SQL',
+    contactInfo: [
+      {
+        icon: phoneIcon,
+        title: '+54 9 11 3144 9224',
+      },
+      {
+        icon: mailIcon,
+        title: 'gastonmonzon3@gmail.com',
+      },
+      {
+        icon: linkedinIcon,
+        title: 'www.linkedin.com/in/gaston-monzon',
+      },
+      {
         icon: webIcon,
         title: 'Portfolio Web: https://gaston-monzon-portfolio.vercel.app/',
       },
       {
-        icon: gitIcon,
+        icon: gitHubIcon,
         title: 'Usuario Git: GastonMonzon',
       },
       {
@@ -419,11 +934,11 @@ Además, adquirí experiencia en modelado de base de datos, autenticación de re
               title: 'Node.js',
             },
             {
-              icon: gitIcon,
+              icon: gitHubIcon,
               title: 'Github',
             },
             {
-              icon: gitIcon2,
+              icon: gitIcon,
               title: 'Git: Avanzado',
             },
             {
@@ -442,6 +957,10 @@ Además, adquirí experiencia en modelado de base de datos, autenticación de re
         },
       ],
     },
+    languagesTitle: 'Idiomas:',
+    spanish: '',
+    english: 'Inglés: Avanzado',
+    englishCertificate: 'EF SET Certifcate En Inglés C2 Proficient',
     projects: {
       mainTitleIcon: projectsIcon,
       mainTitle: 'Proyectos',
@@ -452,7 +971,7 @@ Además, adquirí experiencia en modelado de base de datos, autenticación de re
           title: 'E-commerce Tienda De Ropa',
           dates: 'feb. 2024 - abr. 2024',
           company: 'Henry Bootcamp',
-          description: `Aplicación web de comercio electrónico de ropa con búsqueda integrada por categoría,filtros y opciones de ordenamiento, registro e inicio de sesión con Firebase con soporte para terceros,sistema de carrito y pagos con Stripe, visualización y creación de reseñas y funciones de administrador para reseñas, productos, usuarios y compras.`,
+          description: `Aplicación web de comercio electrónico de ropa con búsqueda integrada por categoría, filtros y opciones de ordenamiento, registro e inicio de sesión con Firebase con soporte para terceros, sistema de carrito y pagos con Stripe, visualización y creación de reseñas y funciones de administrador para reseñas, productos, usuarios y compras.`,
           gitHubUrl: 'https://github.com/GastonMonzon/ecommerce-ropa',
           madeWithList: ['React', 'HTML', 'CSS', 'JavaScript', 'Node.js', 'MongoDb', 'Mongoose', 'Firebase', 'Stripe', 'Cloudinary', 'Railway', 'Vercel'],
           madeWith: [
@@ -535,7 +1054,8 @@ Además, adquirí experiencia en modelado de base de datos, autenticación de re
             vercelIcon,
           ],
         },
-      ]
+      ],
+      developedWith: 'Desarrollado Con: ',
     },
     experience: [
       {
@@ -766,8 +1286,9 @@ rascadores para gatos.`,
         'Licencia de Conducir',
         'Licencia de Piloto de Planeador',
       ]
-    }
-  }
+    },
+    page: 'de',
+  };
 
   return (
     <Document style={styles.main} >
@@ -776,7 +1297,7 @@ rascadores para gatos.`,
           {/* <Image style={styles.image} src={cvImage} /> */}
           <Text style={styles.name} >Gaston Exequiel Monzon</Text>
         </View>
-        <Text style={styles.title} >Desarrollador Full Stack Junior Javascript | Node JS | HTML | CSS | SQL</Text>
+        <Text style={styles.title} >{textData.mainTitle}</Text>
         <View style={styles.infoContainer}>
           {textData.contactInfo.map(info => (
             <View style={styles.iconInfoContainer} key={info.title}>
@@ -825,9 +1346,10 @@ rascadores para gatos.`,
             </View>
           </React.Fragment>
         ))}
-        <Text style={styles.subTitle} >Idiomas:</Text>
-        <Text style={styles.infoLanguage} >Inglés: Avanzado</Text>
-        <Text style={styles.infoLanguage} >EF SET Certificate En Inglés C2 Proficient</Text>
+        <Text style={styles.subTitle} >{textData.languagesTitle}</Text>
+        {/* <Text style={styles.infoLanguage} >{textData.spanish}</Text> */}
+        <Text style={styles.infoLanguage} >{textData.english}</Text>
+        <Text style={styles.infoLanguage} >{textData.englishCertificate}</Text>
         <View style={styles.projectsMainContainer} >
           <View style={styles.mainTitleContainer} >
             <Image style={styles.mainTitleIcon} src={textData.projects.mainTitleIcon} />
@@ -856,11 +1378,11 @@ rascadores para gatos.`,
                     <Text style={styles.subTitle}>{project.title}</Text>
                     <Text style={styles.projectDescription}>{project.description}</Text>
                     <View style={styles.gitHubUrlContainer} >
-                      <Image style={styles.skillsInfoIcon} src={gitIcon} />
+                      <Image style={styles.skillsInfoIcon} src={gitHubIcon} />
                       <Text style={styles.skillsInfo}>{project.gitHubUrl}</Text>
                     </View>
                     <View style={styles.appsContainer} >
-                      <Text style={styles.jobTitle} >Desarrollado Con: {/* {project.madeWithList.join(', ')} */}</Text>
+                      <Text style={styles.jobTitle} >{textData.developedWith}{/* {project.madeWithList.join(', ')} */}</Text>
                       {project.madeWith.map((app, index) => (
                         <View key={`app-${index}`}>
                           <Image style={styles.skillsInfoIcon} src={app} />
@@ -939,7 +1461,7 @@ rascadores para gatos.`,
           </Text>
         ))} */}
         <Text style={styles.pageNumber} render={({ pageNumber, totalPages }) => (
-          `${pageNumber} de ${totalPages}`
+          `${pageNumber} ${textData.page} ${totalPages}`
         )} fixed />
       </Page>
     </Document>

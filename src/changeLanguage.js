@@ -42,7 +42,7 @@ export default function changeLanguage(isEnglish) {
         I'm thrilled to showcase my work in creating web applications with React and also share my studies on different programming languages and frameworks.
 
         Explore my portfolio to learn more about my work and approach to programming. You'll find all my deployed projects, which are the result of my dedication, creativity, and continuous learning.`,
-      about: `I was born and currently reside in Capital Federal, Buenos Aires, Argentina. Throughout my career, I have gained valuable experience in various regular jobs, primarily in customer service and retail sales. These experiences have polished my interpersonal skills and taught me the importance of effective communication.
+      about: `I was born and currently reside in Capital Federal, Buenos Aires, Argentina. Throughout my career, I have gained valuable experiences in various regular jobs, primarily in customer service and retail sales. These experiences have polished my interpersonal skills and taught me the importance of effective communication.
 
         However, it was not until recently that I discovered my true passion when I embarked on the journey of programming and web development. While on a React bootcamp over the past few months i've dedicated myself to honing my skills in programming with a specific focus on creating user-friendly interfaces and providing a wide range of user options.
         

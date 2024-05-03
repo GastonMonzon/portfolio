@@ -44,7 +44,7 @@ function App() {
       <About textContent={textContent} viewportWidth={viewportWidth} />
       <Skills textContent={textContent} viewportWidth={viewportWidth} />
       <Apps textContent={textContent} viewportWidth={viewportWidth} />
-      <Documents textContent={textContent} viewportWidth={viewportWidth} />
+      <Documents isEnglish={isEnglish} textContent={textContent} viewportWidth={viewportWidth} />
       <Contact textContent={textContent} viewportWidth={viewportWidth} />
       <Footer textContent={textContent} viewportWidth={viewportWidth} />
     </>
