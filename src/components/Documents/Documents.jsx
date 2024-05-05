@@ -10,7 +10,7 @@ import aprobado from '../../assets/pdfs/Certificado Aprobacion Henry Bootcamp.pd
 import scrum from '../../assets/images/Certificado TSoft Agilidad-Introducción Scrum.png';
 import { useState } from 'react';
 
-export default function Documents({ isEnglish, textContent }) {
+export default function Documents({ isEnglish, textContent, viewportWidth }) {
 
   const [iframeIndex, setIframeIndex] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -29,7 +29,7 @@ export default function Documents({ isEnglish, textContent }) {
   }
   const getIframeStyle = (index) => {
     const translateX = 70 * index;
-    const scale = 1 - Math.abs(index) / 10;
+    const scale = 1 - Math.abs(index) / 10 - (viewportWidth < 1000 ? 0.2 : 0) ;
     const zIndex = index === 0 ? 1 : 0;
     return {
       zIndex: zIndex,
@@ -41,7 +41,7 @@ export default function Documents({ isEnglish, textContent }) {
     <section id='documents' >
       <h2>{textContent.documentsButton}</h2>
       <h3></h3>
-      <div className='documentsContainer' >
+      <div className='documents-container' >
         <button
           className='document-button'
           disabled={iframeIndex === 1}

@@ -3,7 +3,7 @@
   height: 29.7cm;
 }
 
-.documentsContainer {
+.documents-container {
   height: 85vh;
   width: 100vw;
   margin-left: -40px;
@@ -42,4 +42,10 @@
   width: 50%;
   height: 100%;
   transition: ease-out 0.5s;
+}
+
+@media screen and (max-width: 1000px) {
+  .document {
+    width: 80%;
+  }
 }
