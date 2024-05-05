@@ -1,4 +1,4 @@
-import './Apps.css';
+import './Portfolio.css';
 
 import cPlusPlusIcon from '../../assets/icons/c++-icon.svg';
 import cloudinaryIcon from '../../assets/icons/cloudinary-icon.svg';
@@ -68,7 +68,7 @@ import handleAnimation from '../../animationUtils';
 import { useInView } from 'react-intersection-observer';
 import { useRef } from 'react';
 
-export default function Apps({ textContent }) {
+export default function Portfolio({ textContent }) {
   const ecommerceTitleRef = useRef();
   const ecommerceInfoRef = useRef();
   const ecommerceAppTypeRef = useRef();
@@ -291,7 +291,7 @@ export default function Apps({ textContent }) {
         <h2>{textContent.portfolioButton}</h2>
         <div className='apps' >
           {Object.entries(apps).map(([key, app]) => (
-            <div key={key} ref={app.viewRef} >
+            <div className='app-container' key={key} ref={app.viewRef} >
               {app.titleIcon
                 ? (
                   <>

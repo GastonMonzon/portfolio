@@ -1,6 +1,7 @@
 .hero-images-bar-container {
   position: relative;
   display: flex;
+  justify-content: center;
   margin: 0 auto;
 }
 
@@ -17,7 +18,7 @@
   display: block;
   flex-shrink: 0;
   flex-grow: 0;
-  transition: translate 500ms ease-in-out;
+  transition: translate 0.5s ease-in-out;
 }
 
 .hero-image-button {
@@ -121,4 +122,10 @@
 
 .fullscreen-radio:hover {
   bottom: 1%;
+}
+
+@media screen and (max-width: 1000px) {
+.hero-images-container {
+  margin-top: 10px;
+}
 }

@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: 30% 70%;
   overflow: hidden;
-
 }
 
 .image-div {
@@ -16,5 +15,29 @@
   position: absolute;
   top: -20%;
   left: -10%;
+}
 
+@media screen and (max-width: 1000px) {
+  #about {
+    grid-template-columns: none;
+    grid-template-rows: 50% 50%;
+  }
+
+  .image-div {
+    width: 30%;
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+  }
+
+  .image-div img {
+    width: 100%;
+    position: absolute;
+    top: -30%;
+    left: -5%;
+  }
+
+  #about h2 {
+    text-align: center;
+  }
 }

@@ -5,6 +5,8 @@
   width: 100vw;
   display: grid;
   grid-template-columns: auto 1fr;
+  justify-content: end;
+  align-items: end;
   padding: 10px 20px;
   z-index: 10;
   font-family: inherit;
@@ -26,7 +28,7 @@
 }
 
 #nav button {
-  transition: 500ms ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .button-scrolled {
@@ -34,30 +36,57 @@
   border-color: rgb(145, 47, 63);
 }
 
-.language-button {
-  font-size: 16px;
-  width: fit-content;
-}
-
 .menu-button {
-  justify-self: end;
-  align-content: start;
-  height: 50px;
+  width: 50px;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+  margin-right: 10px;
 }
 
 .menu-button img {
-  height: 100%;
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 50px;
 }
 
 .menu {
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 999;
+  z-index: 20;
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
   justify-self: end;
   background-color: black;
   border-bottom: 1px solid red;
+}
+
+.menu button {
+  width: 150px;
+}
+
+@media screen and (max-width: 1000px) {
+  #nav {
+    align-items: end;
+    height: 50px;
+    padding: 5px 10px;
+  }
+
+  #nav div,
+  #nav h2 {
+    padding: 0;
+    margin: 0;
+  }
+
+  .language-button {
+    vertical-align: bottom;
+  }
+
+  .contact-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }

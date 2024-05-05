@@ -3,7 +3,7 @@ import './App.css'
 import BackGroundAnimation from './components/BackGroundAnimation/BackGroundAnimation';
 import Nav from './components/Nav/Nav';
 import changeLanguage from './changeLanguage';
-import Apps from './components/Apps/Apps';
+import Portfolio from './components/Portfolio/Portfolio';
 import Headline from './components/Headline/Headline';
 import About from './components/About/About';
 
@@ -43,7 +43,7 @@ function App() {
       <Headline textContent={textContent} viewportWidth={viewportWidth} />
       <About textContent={textContent} viewportWidth={viewportWidth} />
       <Skills textContent={textContent} viewportWidth={viewportWidth} />
-      <Apps textContent={textContent} viewportWidth={viewportWidth} />
+      <Portfolio textContent={textContent} viewportWidth={viewportWidth} />
       <Documents isEnglish={isEnglish} textContent={textContent} viewportWidth={viewportWidth} />
       <Contact textContent={textContent} viewportWidth={viewportWidth} />
       <Footer textContent={textContent} viewportWidth={viewportWidth} />

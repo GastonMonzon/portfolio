@@ -108,15 +108,20 @@ export default function Nav({ textContent, isEnglish, handleLanguageChange, view
     <>
       <nav id='nav'>
         <h2>Gaston Monzon</h2>
-        <p className='pcOnly' >{textContent.pcOnly}</p>
+        {/* <p className='pcOnly' >{textContent.pcOnly}</p> */}
         {viewportWidth < 1000 &&
-          <button
-            className='menu-button'
-            onClick={handleOpenMenu}
-            onBlur={() => setTimeout(handleMenuBlur, 100)}
-          >
-            <img src={menuIcon} alt='Menu Icon' />
-          </button>}
+          <div>
+            <button className='language-button' onClick={handleLanguageChange} >
+              {isEnglish ? 'Español' : 'English'}
+            </button>
+            <button
+              className='menu-button'
+              onClick={handleOpenMenu}
+              onBlur={() => setTimeout(handleMenuBlur, 100)}
+            >
+              <img src={menuIcon} alt='Menu Icon' />
+            </button>
+          </div>}
         {viewportWidth > 1000 ?
           <div>
             {navButtons.map((button) => {
@@ -141,9 +146,6 @@ export default function Nav({ textContent, isEnglish, handleLanguageChange, view
               </button>
             )
           })}
-          <button onClick={handleLanguageChange} >
-            {isEnglish ? 'Español' : 'English'}
-          </button>
         </div>}
     </>
   )

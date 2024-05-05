@@ -62,7 +62,7 @@
     filter: blur(4px);
     opacity: 0;
   }
-  
+
   100% {
     transform: scale(1);
     filter: blur(0px);
@@ -111,7 +111,7 @@
 
 @keyframes up-down-arrow-heartbeat {
   0% {
-  transform: translateY(0) rotate(90deg);
+    transform: translateY(0) rotate(90deg);
   }
 
   25% {
@@ -322,4 +322,15 @@ label {
 
 .contact-modal-close-button svg:hover .close-svg-outer-path {
   fill: red;
+}
+
+@media screen and (max-width: 1000px) {
+  .contact-container {
+    grid-template-columns: none;
+    grid-template-rows: repeat(1fr, auto);
+  }
+
+  .contact-info-container {
+    width: 100%;
+  }
 }
