@@ -81,8 +81,14 @@
     margin: 0;
   }
 
+  #nav h2 {
+    font-size: 18px;
+  }
+
   .language-button {
     vertical-align: bottom;
+    font-size: 16px;
+    padding: 0;
   }
 
   .contact-container {
