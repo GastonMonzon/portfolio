@@ -5,12 +5,13 @@ import nextIcon from './Carrousel icons/next.svg';
 import perviousIcon from './Carrousel icons/previous.svg';
 
 import { useEffect, useRef, useState } from 'react'
-export default function Carousel({ images }) {
+export default function Carousel({ images, viewportWidth }) {
 
   const [imageIndex, setImageIndex] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
   let autoScrollIntervalRef = useRef(null);
   const isAutoScrollActiveRef = useRef(false);
+  const containerRef = useRef(null);
 
   useEffect(() => {
     if (!isFullscreen && !isAutoScrollActiveRef.current) {
@@ -59,7 +60,20 @@ export default function Carousel({ images }) {
 
   const handleHeroImageClick = () => {
     if (!isFullscreen) {
-      setIsFullscreen(true);
+      if (viewportWidth < 1000) {
+        const container = containerRef.current;
+        if (container.requestFullscreen) {
+          container.requestFullscreen();
+        } else if (container.mozRequestFullScreen) {
+          container.mozRequestFullScreen();
+        } else if (container.webkitRequestFullscreen) {
+          container.webkitRequestFullscreen();
+        } else if (container.msRequestFullscreen) {
+          container.msRequestFullscreen();
+        }
+      } else {
+        setIsFullscreen(true);
+      }
       stopAutoScroll();
       document.documentElement.style.overflow = 'hidden';
     }
@@ -72,7 +86,7 @@ export default function Carousel({ images }) {
 
   return (
     <>
-      <div className={`${isFullscreen ? 'fullscreen-container' : 'hero-images-bar-container'}`} >
+      <div ref={containerRef} className={`${isFullscreen ? 'fullscreen-container' : 'hero-images-bar-container'}`} >
         <div className={`${isFullscreen ? 'fullscreen-image' : 'hero-images-container'}`} >
           {images.map((image, index) => (
             <img

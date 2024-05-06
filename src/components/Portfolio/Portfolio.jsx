@@ -68,7 +68,7 @@ import handleAnimation from '../../animationUtils';
 import { useInView } from 'react-intersection-observer';
 import { useRef } from 'react';
 
-export default function Portfolio({ textContent }) {
+export default function Portfolio({ textContent, viewportWidth }) {
   const ecommerceTitleRef = useRef();
   const ecommerceInfoRef = useRef();
   const ecommerceAppTypeRef = useRef();
@@ -336,7 +336,7 @@ export default function Portfolio({ textContent }) {
                 </div>
                 <div className='app-separator-div' ></div>
                 <div className='app-images-container' ref={app.imagesRef} >
-                  <Carousel images={app.images} />
+                  <Carousel images={app.images} viewportWidth={viewportWidth} />
                 </div>
               </div>
               {handleAnimation(app.viewValue, app.titleRef, 'blur-appear-app-title', 'nothing')}

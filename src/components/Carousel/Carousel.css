@@ -125,7 +125,14 @@
 }
 
 @media screen and (max-width: 1000px) {
-.hero-images-container {
-  margin-top: 10px;
-}
+  .hero-images-container {
+    width: 100vw;
+    margin-top: 10px;
+  }
+
+  .hero-image {
+    object-fit: contain;
+    width: 100%;
+  }
+
 }
