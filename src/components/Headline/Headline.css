@@ -10,13 +10,9 @@
 
 @media screen and (max-width: 1000px) {
   #headline {
-    padding-top: 18rem;
+    padding-top: 3rem;
   }
 
-  #headline p {
-    max-width: 100%;
-  }
-  
   #headline p {
     max-width: 100%;
   }

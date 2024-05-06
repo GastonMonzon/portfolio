@@ -24,10 +24,11 @@
   }
 
   .image-div {
-    width: 30%;
+    width: 90%;
     position: relative;
     display: flex;
     margin: 0 auto;
+    margin-top: 20%;
   }
 
   .image-div img {
